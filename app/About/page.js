@@ -34,7 +34,7 @@ export default function About() {
                         </p>
                         <p className="text-lg text-gray-300">
                             My toolkit includes <span className="text-lime-400">Next.js</span>, <span
-                            className="text-lime-400">Java</span>, and <span className="text-lime-400">Tailwind CSS</span> —
+                            className="text-lime-400">Java</span>, and <span className="text-lime-400">Postgres SQL</span> —
                             and I’m constantly leveling up.
                         </p>
                     </div>

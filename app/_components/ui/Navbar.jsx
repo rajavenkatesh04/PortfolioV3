@@ -33,7 +33,7 @@ export default function Navbar() {
                                 </li>
 
                                 <li>
-                                    <Link href={`/projects`}
+                                    <Link href={`#projects`}
                                           className={`py-2 px-3 font-medium hover:text-lime-500 transition-colors duration-300 inline-flex items-center`}>Projects<GoProjectRoadmap
                                         className={`mx-2 text-lime-400 text-xl`}/></Link>
                                 </li>

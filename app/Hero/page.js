@@ -1,102 +1,96 @@
 "use client"
-import { animate, stagger } from "motion"
-import { splitText } from "motion-plus"
 import { useEffect, useRef } from "react"
-import { FaAnglesDown } from "react-icons/fa6";
-import Link from "next/link";
-import {Josefin_Sans} from "next/font/google";
+import { gsap } from "gsap"
+import { SplitText } from "gsap/SplitText"
+import { FaAnglesDown } from "react-icons/fa6"
+import Link from "next/link"
 
-export default function SplitText() {
+gsap.registerPlugin(SplitText)
+
+export default function SplitTextComponent() {
     const containerRef = useRef(null)
+    const headingRef = useRef(null)
 
     useEffect(() => {
         document.fonts.ready.then(() => {
-            if (!containerRef.current) return
+            if (!containerRef.current || !headingRef.current) return
 
             containerRef.current.style.visibility = "visible"
 
-            const h1Element = containerRef.current.querySelector("h1")
-            if (!h1Element) return
+            // Create SplitText with masking for reveal effect
+            const split = SplitText.create(headingRef.current, {
+                type: "lines",
+                linesClass: "split-line",
+                mask: "lines", // Creates mask elements for reveal effect
+                autoSplit: true,
+                onSplit(self) {
+                    // Animate the mask reveal
+                    gsap.set(self.lines, {
+                        yPercent: 100
+                    })
 
-            const { words } = splitText(h1Element)
-
-            animate(
-                words,
-                { opacity: [0, 1], y: [10, 0] },
-                {
-                    type: "spring",
-                    duration: 3,
-                    bounce: 0,
-                    delay: stagger(0.20),
+                    return gsap.to(self.lines, {
+                        yPercent: 0,
+                        duration: 1.8,
+                        ease: "expo.out",
+                        stagger: {
+                            amount: 1.2,
+                            from: "start"
+                        },
+                        delay: 0.5
+                    })
                 }
-            )
+            })
+
+            return () => {
+                split.revert()
+            }
         })
     }, [])
 
     return (
-        <div className="container" ref={containerRef}>
-            <div className={`font-josefin `}><h1 className="h1 ">
-                {/*This portfolio runs on passion, pixels, and late-night debugging. Welcome!*/}
-                {/*Hello and thank you for visiting here’s a peek into my developer journey.*/}
-                Make yourself at home <span className={`text-lime-500`}>—</span> here’s what I’ve been working on.
-            </h1></div>
+        <div
+            ref={containerRef}
+            className="flex flex-col justify-center items-center min-h-screen w-full text-center bg-zinc-950 px-8 py-16 box-border relative invisible"
+        >
+            <div className="w-full max-w-6xl mx-auto">
+                <h1
+                    ref={headingRef}
+                    className="font-bold text-gray-400 leading-[1.1] m-0 w-full"
+                    style={{
+                        fontFamily: 'Josefin Sans, sans-serif',
+                        fontSize: 'clamp(2.5rem, 8vw, 5rem)'
+                    }}
+                >
+                    Make yourself at{" "}
+                    <span className="text-lime-500">home</span>{" "}
+                    <span className="text-lime-500">—</span>{" "}
+                    here's what I've been{" "}
+                    <span className="text-lime-500">working</span>{" "}
+                    on.
+                </h1>
+            </div>
 
-            <div className="down-icon">
-                <Link href={`#about`}>
-                    <FaAnglesDown
-                    className="animate-bounce opacity-70 text-lime-500 text-2xl hover:text-white transition-colors duration-300"/>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                <Link href="#about">
+                    <FaAnglesDown className="animate-bounce opacity-70 text-lime-500 text-2xl hover:text-white transition-colors duration-300" />
                 </Link>
             </div>
-            <Stylesheet />
+
+            <style jsx>{`
+                .split-line {
+                    overflow: hidden;
+                    backface-visibility: hidden;
+                }
+                
+                h1 {
+                    font-kerning: none;
+                    text-rendering: optimizeSpeed;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    transform: translateZ(0);
+                }
+            `}</style>
         </div>
-
-    )
-}
-
-function Stylesheet() {
-    return (
-        <style>{`
-            .container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100vw;
-                height: 100vh;
-                text-align: center;
-                visibility: hidden;
-                background: #0a0a0a;
-                padding: 2rem;
-                box-sizing: border-box;
-            }
-            .h1 {
-                font-family: Josefin Sans;
-                // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                font-size: clamp(3rem, 12vw, 5rem);
-                font-weight: 600;
-                line-height: 1.1;
-                color: grey;
-                margin: 0;
-                max-width: 100%;
-            }
-            
-            .split-word {
-                will-change: transform, opacity;
-                display: inline-block;
-            }
-            
-            .down-icon {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-            
-            /* Make sure body and html don't have margins/padding */
-            body, html {
-                margin: 0;
-                padding: 0;
-                overflow-x: hidden;
-            }
-        `}</style>
     )
 }
