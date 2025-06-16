@@ -39,10 +39,12 @@ export default function Navbar() {
                                 </li>
 
                                 <li>
-                                    <Link href={`/public`}
-                                          className={`py-2 px-3 font-medium hover:text-lime-500 transition-colors duration-300 inline-flex items-center`}>Resume<LiaFileDownloadSolid
-                                        className={`mx-2 text-lime-400 text-xl`}/></Link>
+                                    <a href="/raja_resume.pdf" download className="py-2 px-3 font-medium hover:text-lime-500 transition-colors duration-300 inline-flex items-center">
+                                        Resume
+                                        <LiaFileDownloadSolid className="mx-2 text-lime-400 text-xl" />
+                                    </a>
                                 </li>
+
                             </ul>
                         </div>
 
@@ -74,9 +76,10 @@ export default function Navbar() {
                                 </li>
 
                                 <li>
-                                    <Link href={`/public`}
-                                          className={`py-2 px-3 font-medium text-white hover:text-white  transition-colors duration-300 inline-flex items-center`}>Resume<LiaFileDownloadSolid
-                                        className={`mx-1 text-lime-500 text-xl`}/></Link>
+                                    <a href="/raja_resume.pdf" download className="py-2 px-3 font-medium text-white hover:text-white transition-colors duration-300 inline-flex items-center">
+                                        Resume
+                                        <LiaFileDownloadSolid className="mx-2 text-lime-500 text-xl" />
+                                    </a>
                                 </li>
                             </ul>
 

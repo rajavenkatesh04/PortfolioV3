@@ -35,18 +35,18 @@ export default function SplitText() {
 
     return (
         <div className="container" ref={containerRef}>
-            <div className={`font-josefin`}><h1 className="h1">
+            <div className={`font-josefin `}><h1 className="h1 ">
                 {/*This portfolio runs on passion, pixels, and late-night debugging. Welcome!*/}
                 {/*Hello and thank you for visiting here’s a peek into my developer journey.*/}
                 Make yourself at home <span className={`text-lime-500`}>—</span> here’s what I’ve been working on.
             </h1></div>
 
             <div className="down-icon">
-                <Link href={`/about`}><FaAnglesDown
-                    className="animate-pulse text-lime-500 text-2xl hover:text-white transition-colors duration-300"/>
+                <Link href={`#about`}>
+                    <FaAnglesDown
+                    className="animate-bounce opacity-70 text-lime-500 text-2xl hover:text-white transition-colors duration-300"/>
                 </Link>
             </div>
-
             <Stylesheet />
         </div>
 
@@ -74,7 +74,7 @@ function Stylesheet() {
                 font-size: clamp(3rem, 12vw, 5rem);
                 font-weight: 600;
                 line-height: 1.1;
-                color: white;
+                color: grey;
                 margin: 0;
                 max-width: 100%;
             }
