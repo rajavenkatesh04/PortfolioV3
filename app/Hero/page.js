@@ -3,6 +3,7 @@ import { animate, stagger } from "motion"
 import { splitText } from "motion-plus"
 import { useEffect, useRef } from "react"
 import { FaAnglesDown } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function SplitText() {
     const containerRef = useRef(null)
@@ -34,14 +35,20 @@ export default function SplitText() {
     return (
         <div className="container" ref={containerRef}>
             <h1 className="h1">
-                Namaste, Welcome to my portfolio.
+                {/*This portfolio runs on passion, pixels, and late-night debugging. Welcome!*/}
+                {/*Hello and thank you for visiting here’s a peek into my developer journey.*/}
+                Make yourself at home <span className={`text-lime-500`}>—</span> here’s what I’ve been working on.
             </h1>
 
-            <div className={``}>
-                <span className={`w-full mx-auto `}><FaAnglesDown className={  `text-white`} /></span>
+            <div className="down-icon">
+                <Link href={`/about`}><FaAnglesDown
+                    className="animate-pulse text-lime-500 text-2xl hover:text-white transition-colors duration-300"/>
+                </Link>
             </div>
+
             <Stylesheet />
         </div>
+
     )
 }
 
@@ -62,7 +69,7 @@ function Stylesheet() {
             }
             .h1 {
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-                font-size: clamp(3rem, 12vw, 8rem);
+                font-size: clamp(3rem, 12vw, 5rem);
                 font-weight: 600;
                 line-height: 1.1;
                 color: white;
@@ -73,6 +80,13 @@ function Stylesheet() {
                 will-change: transform, opacity;
                 display: inline-block;
             }
+            
+            .down-icon {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
             
             /* Make sure body and html don't have margins/padding */
             body, html {
