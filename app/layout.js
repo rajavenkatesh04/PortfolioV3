@@ -1,12 +1,21 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import { Josefin_Sans } from 'next/font/google';
+
 import "./globals.css";
 import Navbar from "@/app/_components/ui/Navbar";
 import { Analytics } from "@vercel/analytics/next"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+const josefin = Josefin_Sans({
+    subsets: ['latin'],
+    weight: ['400', '600'], // adjust as needed
+});
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",

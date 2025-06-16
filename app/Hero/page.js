@@ -4,6 +4,7 @@ import { splitText } from "motion-plus"
 import { useEffect, useRef } from "react"
 import { FaAnglesDown } from "react-icons/fa6";
 import Link from "next/link";
+import {Josefin_Sans} from "next/font/google";
 
 export default function SplitText() {
     const containerRef = useRef(null)
@@ -34,11 +35,11 @@ export default function SplitText() {
 
     return (
         <div className="container" ref={containerRef}>
-            <h1 className="h1">
+            <div className={`font-josefin`}><h1 className="h1">
                 {/*This portfolio runs on passion, pixels, and late-night debugging. Welcome!*/}
                 {/*Hello and thank you for visiting here’s a peek into my developer journey.*/}
                 Make yourself at home <span className={`text-lime-500`}>—</span> here’s what I’ve been working on.
-            </h1>
+            </h1></div>
 
             <div className="down-icon">
                 <Link href={`/about`}><FaAnglesDown
@@ -68,7 +69,8 @@ function Stylesheet() {
                 box-sizing: border-box;
             }
             .h1 {
-                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                font-family: Josefin Sans;
+                // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
                 font-size: clamp(3rem, 12vw, 5rem);
                 font-weight: 600;
                 line-height: 1.1;
@@ -76,6 +78,7 @@ function Stylesheet() {
                 margin: 0;
                 max-width: 100%;
             }
+            
             .split-word {
                 will-change: transform, opacity;
                 display: inline-block;

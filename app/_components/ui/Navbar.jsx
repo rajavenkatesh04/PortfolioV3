@@ -29,19 +29,19 @@ export default function Navbar() {
                                 <li>
                                     <Link href={`/contact`}
                                           className={`py-2 px-3 font-medium hover:text-lime-500 transition-colors duration-300 inline-flex items-center`}>Contact<IoMdContact
-                                        className={`mx-2 text-lime-400`}/></Link>
+                                        className={`mx-2 text-lime-400 text-xl`}/></Link>
                                 </li>
 
                                 <li>
                                     <Link href={`/projects`}
                                           className={`py-2 px-3 font-medium hover:text-lime-500 transition-colors duration-300 inline-flex items-center`}>Projects<GoProjectRoadmap
-                                        className={`mx-2 text-lime-400`}/></Link>
+                                        className={`mx-2 text-lime-400 text-xl`}/></Link>
                                 </li>
 
                                 <li>
                                     <Link href={`/public`}
                                           className={`py-2 px-3 font-medium hover:text-lime-500 transition-colors duration-300 inline-flex items-center`}>Resume<LiaFileDownloadSolid
-                                        className={`mx-2 text-lime-400`}/></Link>
+                                        className={`mx-2 text-lime-400 text-xl`}/></Link>
                                 </li>
                             </ul>
                         </div>
@@ -51,7 +51,7 @@ export default function Navbar() {
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
                             >
-                                {isOpen ? <IoMdClose className={`text-xl text-lime-400`}/> : <CiMenuBurger className={`text-xl text-lime-400`}/>}
+                                {isOpen ? <IoMdClose className={`text-2xl text-lime-400`}/> : <CiMenuBurger className={`text-2xl text-lime-400`}/>}
 
                             </button>
                         </div>
@@ -59,24 +59,24 @@ export default function Navbar() {
 
                     {/*    Mobile Menu navigation */}
                     {isOpen && (
-                        <div className={`border-t`}>
-                            <ul className={`space-x-8`}>
+                        <div className={`border-t border-t-lime-300 mb-5`}>
+                            <ul className={`py-5 space-x-8 space-y-5`}>
                                 <li>
                                     <Link href={`/contact`}
-                                          className={`py-2 px-3 font-medium text-lime-500 hover:text-white transition-colors duration-300 inline-flex items-center`}>Contact<IoMdContact
-                                        className={`mx-2`}/></Link>
+                                          className={`py-2 px-3 font-medium text-white hover:text-white transition-colors duration-300 inline-flex items-center`}>Contact<IoMdContact
+                                        className={`mx-2 text-lime-500 text-xl`}/></Link>
                                 </li>
 
                                 <li>
                                     <Link href={`/projects`}
-                                          className={`py-2 px-3 font-medium text-lime-500 hover:text-white transition-colors duration-300 inline-flex items-center`}>Projects<GoProjectRoadmap
-                                        className={`mx-2`}/></Link>
+                                          className={`py-2 px-3 font-medium text-white hover:text-white transition-colors duration-300 inline-flex items-center`}>Projects<GoProjectRoadmap
+                                        className={`mx-2 text-lime-500 text-xl`}/></Link>
                                 </li>
 
                                 <li>
                                     <Link href={`/public`}
-                                          className={`py-2 px-3 font-medium text-lime-500 hover:text-white  transition-colors duration-300 inline-flex items-center`}>Resume<LiaFileDownloadSolid
-                                        className={`mx-1`}/></Link>
+                                          className={`py-2 px-3 font-medium text-white hover:text-white  transition-colors duration-300 inline-flex items-center`}>Resume<LiaFileDownloadSolid
+                                        className={`mx-1 text-lime-500 text-xl`}/></Link>
                                 </li>
                             </ul>
 
