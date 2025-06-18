@@ -13,7 +13,7 @@ export const projects = [
     },
     {
         title: "Personal portfolio",
-        image: "/portfolio.jpeg",
+        image: "/Portfolio.jpeg",
         imageAlt: "Portfolio screenshot",
         description: "This is my personal portfolio website."
     }
