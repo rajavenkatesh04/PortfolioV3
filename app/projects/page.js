@@ -1,5 +1,7 @@
 import {projects} from "@/app/projects/projectData";
 import Image from "next/image";
+import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Projects() {
     return(
@@ -17,7 +19,17 @@ export default function Projects() {
                                 key={index}
                                 className="border border-lime-400 rounded-2xl p-4 flex flex-col h-full hover:border-lime-300 transition-colors"
                             >
-                                <h2 className="text-xl font-semibold mb-3 text-white ">{item.title}</h2>
+                                <div className="flex justify-between items-center mb-3">
+                                    <h2 className="text-xl font-semibold text-white">{item.title}</h2>
+                                    <Link
+                                        href={item.liveLink}
+                                        target="_blank"
+                                        className="flex items-center gap-1 text-lime-400 hover:text-lime-500 transition-colors duration-300"
+                                    >
+                                        Live Demo <FaExternalLinkAlt />
+                                    </Link>
+                                </div>
+
                                 <div className="flex-shrink-0 mb-4 ">
                                     <Image
                                         src={item.image}
