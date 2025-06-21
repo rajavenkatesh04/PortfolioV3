@@ -43,8 +43,7 @@ export default function Footer() {
                         className="text-lime-600 animate-pulse drop-shadow-md text-lime-400"/> by Raja
                     </p>
 
-                    <div
-                        className="flex justify-center items-center gap-6 text-lime-400 hover:text-lime-300 transition-colors ">
+                    <div className="flex justify-center text-2xl items-center gap-6 text-lime-400 hover:text-lime-300 transition-colors ">
                         <Link href={`https://github.com/rajavenkatesh04`} target={`_blank`}><FaGithub
                             className="hover:scale-110 transition-transform cursor-pointer"/></Link>
                         <Link href={`https://leetcode.com/u/rajavenkatesh20/`} target={`_blank`}><SiLeetcode
