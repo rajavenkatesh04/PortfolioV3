@@ -1,12 +1,31 @@
 import { FaHeart } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { SiHackerrank } from "react-icons/si";
+import { SiCredly } from "react-icons/si";
+import Link from "next/link";
 
 export default function Footer() {
     return (
-        <footer className="w-full z-50 bg-black/80 backdrop-blur-md text-lime-400 text-center py-6 border-t border-lime-500">
-            <p className="text-sm sm:text-base flex justify-center items-center gap-2">
-                Built with love <FaHeart className="text-lime-500 animate-pulse drop-shadow-md" /> by Raja
-
+        <footer className="w-full z-50 bg-black backdrop-blur-md text-center py-6  items-center justify-center">
+            <p className="text-sm sm:text-base flex justify-center items-center gap-2 text-lime-400">
+                Built with love <FaHeart className="text-lime-600 animate-pulse drop-shadow-md text-lime-400" /> by Raja
             </p>
+
+
+            <div className="mt-4 border-t border-lime-800 py-4 max-w-7xl mx-auto px-4 flex justify-between items-center text-2xl sm:text-xl">
+                <div className="flex justify-center items-center gap-6 text-lime-400 hover:text-lime-300 transition-colors">
+                    <Link href={`https://github.com/rajavenkatesh04`} target={`_blank`}><FaGithub className="hover:scale-110 transition-transform cursor-pointer"/></Link>
+                    <Link href={`https://leetcode.com/u/rajavenkatesh20/`} target={`_blank`}><SiLeetcode className="hover:scale-110 transition-transform cursor-pointer"/></Link>
+                    <Link href={`https://www.hackerrank.com/profile/RA2211003010773`} target={`_blank`}><SiHackerrank className="hover:scale-110 transition-transform cursor-pointer"/></Link>
+                </div>
+
+                <div className="flex justify-center items-center gap-6 text-lime-400 hover:text-lime-300 transition-colors">
+                    <Link href={`https://www.linkedin.com/in/guthularajavenkatesh/`} target={`_blank`}><SiCredly className="hover:scale-110 transition-transform cursor-pointer" /></Link>
+                    <Link href={`https://www.linkedin.com/in/guthularajavenkatesh/`} target={`_blank`}><FaLinkedin className="hover:scale-110 transition-transform cursor-pointer"/></Link>
+                </div>
+            </div>
         </footer>
     );
 }
