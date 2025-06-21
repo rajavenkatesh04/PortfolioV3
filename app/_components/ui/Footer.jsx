@@ -52,9 +52,6 @@ export default function Footer() {
                         <Link href={`https://www.hackerrank.com/profile/RA2211003010773`}
                               target={`_blank`}><SiHackerrank
                             className="hover:scale-110 transition-transform cursor-pointer"/></Link>
-                    </div>
-
-                    <div className="flex justify-center items-center gap-6 text-lime-400 hover:text-lime-300 transition-colors">
                         <Link href={`https://www.linkedin.com/in/guthularajavenkatesh/`} target={`_blank`}><SiCredly
                             className="hover:scale-110 transition-transform cursor-pointer"/></Link>
                         <Link href={`https://www.linkedin.com/in/guthularajavenkatesh/`} target={`_blank`}><FaLinkedin
