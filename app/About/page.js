@@ -15,12 +15,12 @@ export default function About() {
 
                 <div className="flex flex-col md:flex-row items-center gap-10">
                     {/* Profile Image */}
-                    <div className="w-50 h-50 relative rounded-full overflow-hidden shadow-lg border-4 border-lime-400 absolute -inset-1 bg-gradient-to-r from-lime-400 to-emerald-400 ">
+                    <div className="w-50 h-50 relative rounded-full overflow-hidden shadow-lg border-4 border-lime-400 absolute bg-gradient-to-r from-lime-400 to-emerald-400 ">
                         <Image
                             src="/Raja.png"
                             alt="Raja"
                             fill
-                            className="object-cover z-50"
+                            className="object-cover "
                             priority
                         />
                     </div>

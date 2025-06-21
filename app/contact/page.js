@@ -32,7 +32,7 @@ export default function Contact() {
 
 
     return (
-        <div id={"contact"} className={"w-full px-[12%] py-10 scroll-mt-20 bg-zinc-900 text-white"}>
+        <div id={"contact"} className={"w-full px-[12%] py-10 scroll-mt-20 bg-zinc-950 text-white font-josefin-sans"}>
             <h4 className={"text-center mb-2 text-lg "}>Connect with me</h4>
             <h2 className={"text-center text-5xl "}>Get in touch</h2>
             <p className={"text-center max-w-2xl mx-auto mt-5 mb-12 "}>I'd love to hear from you! If you have any questions, comments or feedback, Please use the form below.</p>
@@ -46,7 +46,7 @@ export default function Contact() {
 
                 <textarea name={"Message"} rows={"6"} placeholder={"Enter your message"} required className={"w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md  mb-6 focus:border-lime-400"} />
 
-                <button type={"submit"} className={"py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500"}>Submit now  <IoIosSend /></button> <p className={"mt-4"}>{result}</p>
+                <button type={"submit"} className={"py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:border border-lime-400 duration-400 ease-in-out"}>Submit now  <IoIosSend /></button> <p className={"mt-4"}>{result}</p>
 
 
             </form>

@@ -14,7 +14,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return(
-        <nav className={`w-full fixed top-0 z-50 bg-transparent backdrop-blur-xl text-white `}>
+        <nav className={`w-full fixed top-0 z-50 bg-transparent backdrop-blur-xl text-white sm:bg-black/10`}>
             <div className={`max-w-7xl px-4 mx-auto  sm:px-6  lg:px-2 `}>
                 <div className={`flex justify-between items-center h-16 md:border-b md:border-b-lime-300`}>
                     {/*Logo*/}
