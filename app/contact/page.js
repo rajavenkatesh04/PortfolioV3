@@ -33,8 +33,9 @@ export default function Contact() {
 
     return (
         <div id={"contact"} className={"w-full px-[12%] py-10 scroll-mt-20 bg-zinc-950 text-white font-josefin-sans"}>
-            <h4 className={"text-center mb-2 text-lg "}>Connect with me</h4>
-            <h2 className={"text-center text-5xl "}>Get in touch</h2>
+            <h1 className="mb-2 text-4xl sm:text-5xl font-bold text-center mb-10 bg-gradient-to-r from-lime-400 via-lime-500 to-emerald-400 bg-clip-text text-transparent">
+                Get in touch
+            </h1>
             <p className={"text-center max-w-2xl mx-auto mt-5 mb-12 "}>I'd love to hear from you! If you have any questions, comments or feedback, Please use the form below.</p>
 
             <form onSubmit={onSubmit} className={"max-w-2xl mx-auto"}>
