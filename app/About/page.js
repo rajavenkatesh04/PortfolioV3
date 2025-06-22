@@ -86,7 +86,7 @@ export default function About() {
                                 <div className="text-xs text-gray-400 uppercase tracking-wider">Projects</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-lime-400 mb-1">3.8+</div>
+                                <div className="text-2xl font-bold text-lime-400 mb-1">7.2+</div>
                                 <div className="text-xs text-gray-400 uppercase tracking-wider">CGPA</div>
                             </div>
                         </div>
