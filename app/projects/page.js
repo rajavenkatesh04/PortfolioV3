@@ -29,7 +29,7 @@ export default function Projects() {
                     {projects.map((item, index) => (
                         <div
                             key={index}
-                            className="group relative bg-white dark:bg-gray-900/30 border border-gray-300 dark:border-gray-800 rounded-2xl p-6 hover:border-indigo-600/50 dark:hover:border-lime-400/50 hover:bg-gray-200 dark:hover:bg-gray-900/50 transition-all duration-500 hover:transform hover:-translate-y-2"
+                            className="group relative border-t border-t-gray-400 dark:bg-gray-900/30 border border-gray-300 dark:border-gray-800 rounded-2xl p-6 hover:border-indigo-600/50 dark:hover:border-lime-400/50 hover:bg-gray-200 dark:hover:bg-gray-900/50 transition-all duration-500 hover:transform hover:-translate-y-2"
                         >
                             {/* Project Image */}
                             <div className="relative mb-6 overflow-hidden rounded-xl">

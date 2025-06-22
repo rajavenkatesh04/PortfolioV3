@@ -82,7 +82,10 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden">
+                    <div className="md:hidden flex gap-4">
+
+                        <ThemeToggle />
+
                         <button onClick={() => setIsOpen(!isOpen)}>
                             {isOpen ? (
                                 <IoMdClose className="text-2xl text-indigo-600 dark:text-lime-400" />
@@ -97,9 +100,6 @@ export default function Navbar() {
                 {isOpen && (
                     <div className="border-t border-t-indigo-300 dark:border-t-lime-300 mb-5 md:hidden">
                         <ul className="py-5 space-y-5">
-                            <li>
-                                <ThemeToggle />
-                            </li>
                             <li>
                                 <Link
                                     href="/contact"

@@ -1,25 +1,375 @@
-// components/ThemeToggle.js
-'use client'
-import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
+"use client"
 
-export default function ThemeToggle() {
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
+import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import { useTheme } from 'next-themes';
+
+const ThemeToggle = () => {
+    const [mounted, setMounted] = useState(false);
+    const { theme, setTheme } = useTheme();
 
     useEffect(() => {
-        setMounted(true)
-    }, [])
+        setMounted(true);
+    }, []);
 
-    if (!mounted) return null
+    if (!mounted) return null;
+
+    const handleToggle = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
 
     return (
-        <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800 transition-colors"
-            aria-label="Toggle theme"
-        >
-            {theme === 'dark' ? '☀️' : '🌙'}
-        </button>
-    )
+        <StyledWrapper>
+            <label className="switch">
+                <input
+                    id="input"
+                    type="checkbox"
+                    checked={theme === 'dark'}
+                    onChange={handleToggle}
+                />
+                <div className="slider round">
+                    <div className="sun-moon">
+                        <svg id="moon-dot-1" className="moon-dot" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="moon-dot-2" className="moon-dot" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="moon-dot-3" className="moon-dot" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="light-ray-1" className="light-ray" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="light-ray-2" className="light-ray" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="light-ray-3" className="light-ray" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="cloud-1" className="cloud-dark" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="cloud-2" className="cloud-dark" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="cloud-3" className="cloud-dark" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="cloud-4" className="cloud-light" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="cloud-5" className="cloud-light" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                        <svg id="cloud-6" className="cloud-light" viewBox="0 0 100 100">
+                            <circle cx={50} cy={50} r={50} />
+                        </svg>
+                    </div>
+                    <div className="stars">
+                        <svg id="star-1" className="star" viewBox="0 0 20 20">
+                            <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z" />
+                        </svg>
+                        <svg id="star-2" className="star" viewBox="0 0 20 20">
+                            <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z" />
+                        </svg>
+                        <svg id="star-3" className="star" viewBox="0 0 20 20">
+                            <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z" />
+                        </svg>
+                        <svg id="star-4" className="star" viewBox="0 0 20 20">
+                            <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z" />
+                        </svg>
+                    </div>
+                </div>
+            </label>
+        </StyledWrapper>
+    );
 }
+
+const StyledWrapper = styled.div`
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 48px; /* Reduced from 60px */
+    height: 28px; /* Reduced from 34px */
+  }
+
+  .switch #input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196f3;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .sun-moon {
+    position: absolute;
+    content: "";
+    height: 20px; /* Reduced from 26px */
+    width: 20px; /* Reduced from 26px */
+    left: 4px;
+    bottom: 4px;
+    background-color: yellow;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  #input:checked + .slider {
+    background-color: black;
+  }
+
+  #input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  #input:checked + .slider .sun-moon {
+    -webkit-transform: translateX(20px); /* Reduced from 26px */
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+    background-color: white;
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+  }
+
+  .moon-dot {
+    opacity: 0;
+    transition: 0.4s;
+    fill: gray;
+  }
+
+  #input:checked + .slider .sun-moon .moon-dot {
+    opacity: 1;
+  }
+
+  .slider.round {
+    border-radius: 28px; /* Reduced from 34px */
+  }
+
+  .slider.round .sun-moon {
+    border-radius: 50%;
+  }
+
+  #moon-dot-1 {
+    left: 8px; /* Scaled from 10px */
+    top: 2px; /* Scaled from 3px */
+    position: absolute;
+    width: 5px; /* Scaled from 6px */
+    height: 5px;
+    z-index: 4;
+  }
+
+  #moon-dot-2 {
+    left: 2px;
+    top: 8px; /* Scaled from 10px */
+    position: absolute;
+    width: 8px; /* Scaled from 10px */
+    height: 8px;
+    z-index: 4;
+  }
+
+  #moon-dot-3 {
+    left: 13px; /* Scaled from 16px */
+    top: 15px; /* Scaled from 18px */
+    position: absolute;
+    width: 2px; /* Scaled from 3px */
+    height: 2px;
+    z-index: 4;
+  }
+
+  #light-ray-1 {
+    left: -6px; /* Scaled from -8px */
+    top: -6px;
+    position: absolute;
+    width: 34px; /* Scaled from 43px */
+    height: 34px;
+    z-index: -1;
+    fill: white;
+    opacity: 10%;
+  }
+
+  #light-ray-2 {
+    left: -50%;
+    top: -50%;
+    position: absolute;
+    width: 44px; /* Scaled from 55px */
+    height: 44px;
+    z-index: -1;
+    fill: white;
+    opacity: 10%;
+  }
+
+  #light-ray-3 {
+    left: -14px; /* Scaled from -18px */
+    top: -14px;
+    position: absolute;
+    width: 48px; /* Scaled from 60px */
+    height: 48px;
+    z-index: -1;
+    fill: white;
+    opacity: 10%;
+  }
+
+  .cloud-light {
+    position: absolute;
+    fill: #eee;
+    animation-name: cloud-move;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+  }
+
+  .cloud-dark {
+    position: absolute;
+    fill: #ccc;
+    animation-name: cloud-move;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+  }
+
+  #cloud-1 {
+    left: 24px; /* Scaled from 30px */
+    top: 12px; /* Scaled from 15px */
+    width: 32px; /* Scaled from 40px */
+  }
+
+  #cloud-2 {
+    left: 35px; /* Scaled from 44px */
+    top: 8px; /* Scaled from 10px */
+    width: 16px; /* Scaled from 20px */
+  }
+
+  #cloud-3 {
+    left: 14px; /* Scaled from 18px */
+    top: 19px; /* Scaled from 24px */
+    width: 24px; /* Scaled from 30px */
+  }
+
+  #cloud-4 {
+    left: 29px; /* Scaled from 36px */
+    top: 14px; /* Scaled from 18px */
+    width: 32px; /* Scaled from 40px */
+  }
+
+  #cloud-5 {
+    left: 38px; /* Scaled from 48px */
+    top: 11px; /* Scaled from 14px */
+    width: 16px; /* Scaled from 20px */
+  }
+
+  #cloud-6 {
+    left: 18px; /* Scaled from 22px */
+    top: 21px; /* Scaled from 26px */
+    width: 24px; /* Scaled from 30px */
+  }
+
+  @keyframes cloud-move {
+    0% {
+      transform: translateX(0px);
+    }
+
+    40% {
+      transform: translateX(3px); /* Scaled from 4px */
+    }
+
+    80% {
+      transform: translateX(-3px); /* Scaled from -4px */
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  .stars {
+    transform: translateY(-26px); /* Scaled from -32px */
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  .star {
+    fill: white;
+    position: absolute;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    animation-name: star-twinkle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  #input:checked + .slider .stars {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  #star-1 {
+    width: 16px; /* Scaled from 20px */
+    top: 2px;
+    left: 2px; /* Scaled from 3px */
+    animation-delay: 0.3s;
+  }
+
+  #star-2 {
+    width: 5px; /* Scaled from 6px */
+    top: 13px; /* Scaled from 16px */
+    left: 2px; /* Scaled from 3px */
+  }
+
+  #star-3 {
+    width: 10px; /* Scaled from 12px */
+    top: 16px; /* Scaled from 20px */
+    left: 8px; /* Scaled from 10px */
+    animation-delay: 0.6s;
+  }
+
+  #star-4 {
+    width: 14px; /* Scaled from 18px */
+    top: 0px;
+    left: 14px; /* Scaled from 18px */
+    animation-delay: 1.3s;
+  }
+
+  @keyframes star-twinkle {
+    0% {
+      transform: scale(1);
+    }
+
+    40% {
+      transform: scale(1.2);
+    }
+
+    80% {
+      transform: scale(0.8);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+export default ThemeToggle;
