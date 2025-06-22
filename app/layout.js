@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Josefin_Sans } from 'next/font/google';
-
+import Providers from "@/app/_components/ThemeProvider";
 import "./globals.css";
 import Navbar from "@/app/_components/ui/Navbar";
 import { Analytics } from "@vercel/analytics/next"
@@ -33,11 +33,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      <div className={`min-h-screen`}>
-          <Navbar />
-          <main className={``}>{children}</main>
-          <Analytics />
-      </div>
+      <Providers>
+          <div className={`min-h-screen`}>
+              <Navbar/>
+              <main className={``}>{children}</main>
+              <Analytics/>
+          </div>
+      </Providers>
       </body>
     </html>
   );

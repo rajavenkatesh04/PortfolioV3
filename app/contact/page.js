@@ -1,10 +1,9 @@
 "use client"
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Image from "next/image";
 import { IoIosSend } from "react-icons/io";
 
 export default function Contact() {
-
     const [result, setResult] = useState("");
 
     const onSubmit = async (event) => {
@@ -30,29 +29,51 @@ export default function Contact() {
         }
     };
 
-
     return (
-        <div id={"contact"} className={"w-full px-[12%] py-10 scroll-mt-20 bg-zinc-950 text-white font-josefin-sans"}>
+        <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-gray-100 dark:bg-zinc-950 text-gray-900 dark:text-white font-josefin-sans transition-colors duration-200">
             <div className="text-center mb-16 sm:mb-20">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wide mb-6">
-                    Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">in touch</span>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-wide mb-6">
+                    Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400">in touch</span>
                 </h1>
                 <div
-                    className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6">
+                    className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400 mx-auto mt-4 sm:mt-6">
                 </div>
             </div>
-            <p className={"text-center max-w-2xl mx-auto mt-5 mb-12 "}>I'd love to hear from you! If you have any questions, comments or feedback, Please use the form below.</p>
+            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-gray-400">I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.</p>
 
-            <form onSubmit={onSubmit} className={"max-w-2xl mx-auto "}>
-                <div className={"grid grid-cols-auto gap-6 mt-10 mb-8 "}>
-                    <input name={"Name"} type={"text"} placeholder={"Enter your name"} required  className={"flex-1 p-3 outline-none border-[0.5px] border-lime-400 rounded-md focus:border-teal-500 "}/>
-                    <input name={"Email"} type={"email"} placeholder={"Enter your email"} required className={"flex-1 p-3 outline-none border-[0.5px] border-lime-400 rounded-md focus:border-teal-500"} />
-
+            <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
+                <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
+                    <input
+                        name="Name"
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                        className="flex-1 p-3 outline-none border-[0.5px] border-indigo-600 dark:border-lime-400 rounded-md focus:border-teal-600 dark:focus:border-emerald-400 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors duration-200"
+                    />
+                    <input
+                        name="Email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                        className="flex-1 p-3 outline-none border-[0.5px] border-indigo-600 dark:border-lime-400 rounded-md focus:border-teal-600 dark:focus:border-emerald-400 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors duration-200"
+                    />
                 </div>
 
-                <textarea name={"Message"} rows={"6"} placeholder={"Enter your message"} required className={"w-full p-4 outline-none border-[0.5px] border-lime-400 rounded-md focus:border-teal-500"} />
+                <textarea
+                    name="Message"
+                    rows="6"
+                    placeholder="Enter your message"
+                    required
+                    className="w-full p-4 outline-none border-[0.5px] border-indigo-600 dark:border-lime-400 rounded-md focus:border-teal-600 dark:focus:border-emerald-400 bg-white dark:bg-zinc-900 text-gray-900 dark:text-white transition-colors duration-200"
+                />
 
-                <button type={"submit"} className={"my-2 py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:border border-lime-400 duration-400 ease-in-out"}>Submit now  <IoIosSend /></button> <p className={"mt-4"}>{result}</p>
+                <button
+                    type="submit"
+                    className="my-2 py-3 px-8 w-max flex items-center justify-between gap-2 bg-gray-100 dark:bg-black/80 text-gray-900 dark:text-white rounded-full hover:border border-indigo-600 dark:border-lime-400 hover:bg-indigo-600/10 dark:hover:bg-lime-400/10 transition-all duration-300"
+                >
+                    Submit now <IoIosSend className="text-indigo-600 dark:text-lime-400"/>
+                </button>
+                <p className="mt-4 text-gray-600 dark:text-gray-400">{result}</p>
             </form>
         </div>
     )

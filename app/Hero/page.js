@@ -51,29 +51,29 @@ export default function SplitTextComponent() {
     return (
         <div
             ref={containerRef}
-            className="flex flex-col justify-center items-center min-h-screen w-full text-center bg-zinc-950 px-8 py-16 box-border relative invisible"
+            className="flex flex-col justify-center items-center min-h-screen w-full text-center bg-white dark:bg-zinc-950 px-8 py-16 box-border relative invisible transition-colors duration-200"
         >
             <div className="w-full max-w-6xl mx-auto">
                 <h1
                     ref={headingRef}
-                    className="font-bold text-gray-400 leading-[1.1] m-0 w-full"
+                    className="font-bold text-gray-600 dark:text-gray-400 leading-[1.1] m-0 w-full"
                     style={{
                         fontFamily: 'Josefin Sans, sans-serif',
                         fontSize: 'clamp(2.5rem, 8vw, 5rem)'
                     }}
                 >
                     Make yourself at{" "}
-                    <span className="text-lime-500">home</span>{" "}
-                    <span className="text-lime-500">—</span>{" "}
+                    <span className="text-indigo-600 dark:text-lime-500">home</span>{" "}
+                    <span className="text-indigo-600 dark:text-lime-500">—</span>{" "}
                     here's what I've been{" "}
-                    <span className="text-lime-500">working</span>{" "}
+                    <span className="text-indigo-600 dark:text-lime-500">working</span>{" "}
                     on.
                 </h1>
             </div>
 
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
                 <Link href="#about">
-                    <FaAnglesDown className="animate-bounce opacity-70 text-lime-500 text-2xl hover:text-white transition-colors duration-300" />
+                    <FaAnglesDown className="animate-bounce opacity-70 text-indigo-600 dark:text-lime-500 text-2xl hover:text-gray-900 dark:hover:text-white transition-colors duration-300" />
                 </Link>
             </div>
 

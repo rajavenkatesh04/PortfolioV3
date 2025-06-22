@@ -68,7 +68,7 @@ export default function Footer() {
             name: "GitHub",
             url: "https://github.com/rajavenkatesh04",
             icon: FaGithub,
-            hoverColor: "hover:text-white hover:bg-gray-800/30 hover:border-gray-600"
+            hoverColor: "hover:text-gray-900 dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-800/30 hover:border-gray-400 dark:hover:border-gray-600"
         },
         {
             name: "LinkedIn",
@@ -89,26 +89,26 @@ export default function Footer() {
             name: "LeetCode",
             url: "https://leetcode.com/u/rajavenkatesh20/",
             icon: SiLeetcode,
-            hoverColor: "hover:border-orange-500/50 hover:bg-orange-500/10 hover:text-orange-400"
+            hoverColor: "hover:text-orange-400 hover:bg-orange-500/10 hover:border-orange-500/30"
         },
         {
             name: "HackerRank",
             url: "https://www.hackerrank.com/profile/RA2211003010773",
             icon: SiHackerrank,
-            hoverColor: "hover:border-green-500/50 hover:bg-green-500/10 hover:text-green-400"
+            hoverColor: "hover:text-green-400 hover:bg-green-500/10 hover:border-green-500/30"
         },
         {
             name: "Credly",
             url: "https://www.linkedin.com/in/guthularajavenkatesh/",
             icon: SiCredly,
-            hoverColor: "hover:border-blue-600/50 hover:bg-blue-600/10 hover:text-blue-400"
+            hoverColor: "hover:text-blue-400 hover:bg-blue-600/10 hover:border-blue-600/30"
         }
     ];
 
     return (
-        <footer className="relative bg-slate-950 border-t border-slate-800/50">
+        <footer className="relative bg-white dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800/50 transition-colors duration-200">
             {/* Subtle gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-lime-500/5" />
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/5 via-transparent to-teal-600/5 dark:from-emerald-500/5 dark:via-transparent dark:to-lime-500/5" />
 
             <div className="relative max-w-6xl mx-auto px-6 py-12">
                 {/* Main Content */}
@@ -117,10 +117,10 @@ export default function Footer() {
                     {/* Left Column - Thanks Message */}
                     <div className="space-y-6">
                         <div className="space-y-4">
-                            <h3 className="text-2xl sm:text-3xl font-light text-white">
-                                Thanks for <span className="text-lime-400">dropping by!</span>
+                            <h3 className="text-2xl sm:text-3xl font-light text-gray-900 dark:text-white">
+                                Thanks for <span className="text-indigo-600 dark:text-lime-400">dropping by!</span>
                             </h3>
-                            <p className="text-slate-400 leading-relaxed">
+                            <p className="text-gray-600 dark:text-slate-400 leading-relaxed">
                                 I'm always excited to connect with fellow developers, potential collaborators,
                                 and anyone passionate about technology. Whether you want to discuss a project,
                                 share opportunities, or just say hello — I'd love to hear from you!
@@ -129,13 +129,13 @@ export default function Footer() {
 
                         {/* Status & Info */}
                         <div className="space-y-3">
-                            <div className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-lime-400/10 to-emerald-400/10 border border-lime-400/20 rounded-full">
-                                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                                <span className="text-emerald-400 font-medium">Open to opportunities</span>
+                            <div className="inline-flex items-center gap-3 px-4 py-2 bg-gradient-to-r from-indigo-600/10 to-teal-600/10 dark:from-lime-400/10 dark:to-emerald-400/10 border border-indigo-600/20 dark:border-lime-400/20 rounded-full">
+                                <div className="w-2 h-2 bg-teal-600 dark:bg-emerald-400 rounded-full animate-pulse"></div>
+                                <span className="text-teal-600 dark:text-emerald-400 font-medium">Open to opportunities</span>
                             </div>
 
-                            <div className="flex items-center gap-2 text-sm text-slate-500">
-                                <BiTime className="text-blue-400" />
+                            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-slate-500">
+                                <BiTime className="text-indigo-600 dark:text-blue-400" />
                                 <span>Chennai, India • {currentTime}</span>
                                 {weather && (
                                     <>
@@ -146,26 +146,26 @@ export default function Footer() {
                                 )}
                             </div>
 
-                            <div className="flex items-center gap-2 text-sm text-slate-500">
-                                <BiCoffee className="text-amber-500" />
+                            <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-slate-500">
+                                <BiCoffee className="text-amber-600 dark:text-amber-500" />
                                 <span>Fueled by coffee and curiosity</span>
                             </div>
                         </div>
 
                         {/* Quick Links */}
                         <div className="space-y-3">
-                            <h4 className="text-white font-medium text-sm">Quick Links</h4>
+                            <h4 className="text-gray-900 dark:text-white font-medium text-sm">Quick Links</h4>
                             <div className="grid grid-cols-2 gap-2">
-                                <Link href="#about" className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
+                                <Link href="#about" className="text-gray-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors text-sm">
                                     About Me
                                 </Link>
-                                <Link href="#projects" className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
+                                <Link href="#projects" className="text-gray-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors text-sm">
                                     Projects
                                 </Link>
-                                <Link href="#experience" className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
+                                <Link href="#experience" className="text-gray-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors text-sm">
                                     Experience
                                 </Link>
-                                <Link href="#contact" className="text-slate-400 hover:text-emerald-400 transition-colors text-sm">
+                                <Link href="#contact" className="text-gray-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors text-sm">
                                     Get In Touch
                                 </Link>
                             </div>
@@ -176,17 +176,17 @@ export default function Footer() {
                     <div className="space-y-6">
                         {/* Social Links - Compact */}
                         <div>
-                            <h4 className="text-white font-medium mb-4">Let's Connect</h4>
+                            <h4 className="text-gray-900 dark:text-white font-medium mb-4">Let's Connect</h4>
                             <div className="grid grid-cols-1 gap-2">
                                 {socialLinks.map((social, index) => (
                                     <Link
                                         key={index}
                                         href={social.url}
                                         target="_blank"
-                                        className={`flex items-center gap-3 p-2 rounded-lg bg-slate-900/50 border border-slate-800 transition-all duration-300 ${social.hoverColor}`}
+                                        className={`flex items-center gap-3 p-2 rounded-lg bg-gray-100 dark:bg-slate-900/50 border border-gray-200 dark:border-slate-800 transition-all duration-300 ${social.hoverColor}`}
                                     >
-                                        <social.icon className="text-base text-slate-400 transition-colors" />
-                                        <span className="text-sm text-slate-300">{social.name}</span>
+                                        <social.icon className="text-base text-gray-600 dark:text-slate-400 transition-colors" />
+                                        <span className="text-sm text-gray-700 dark:text-slate-300">{social.name}</span>
                                     </Link>
                                 ))}
                             </div>
@@ -194,17 +194,17 @@ export default function Footer() {
 
                         {/* Coding Platforms */}
                         <div>
-                            <h4 className="text-white font-medium mb-4">Coding Profiles</h4>
+                            <h4 className="text-gray-900 dark:text-white font-medium mb-4">Coding Profiles</h4>
                             <div className="grid grid-cols-1 gap-2">
                                 {codingPlatforms.map((platform, index) => (
                                     <Link
                                         key={index}
                                         href={platform.url}
                                         target="_blank"
-                                        className={`flex items-center gap-3 p-2 rounded-lg border border-slate-800 bg-slate-900/50 transition-all duration-300 ${platform.hoverColor}`}
+                                        className={`flex items-center gap-3 p-2 rounded-lg bg-gray-100 dark:bg-slate-900/50 border border-gray-200 dark:border-slate-800 transition-all duration-300 ${platform.hoverColor}`}
                                     >
-                                        <platform.icon className="text-base text-slate-400 transition-colors" />
-                                        <span className="text-sm text-slate-300">{platform.name}</span>
+                                        <platform.icon className="text-base text-gray-600 dark:text-slate-400 transition-colors" />
+                                        <span className="text-sm text-gray-700 dark:text-slate-300">{platform.name}</span>
                                     </Link>
                                 ))}
                             </div>
@@ -213,8 +213,8 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-slate-800/50">
-                    <div className="flex items-center gap-2 text-slate-500 mb-4 sm:mb-0">
+                <div className="flex flex-col sm:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-slate-800/50">
+                    <div className="flex items-center gap-2 text-gray-500 dark:text-slate-500 mb-4 sm:mb-0">
                         <span>© 2025 Raja Venkatesh.</span>
                         <span className="hidden sm:inline">Crafted with</span>
                         <FaHeart className="text-red-500 animate-pulse" />
@@ -222,18 +222,18 @@ export default function Footer() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <div className="hidden sm:flex items-center gap-4 text-xs text-slate-600">
+                        <div className="hidden sm:flex items-center gap-4 text-xs text-gray-600 dark:text-slate-600">
                             <span>Future MAANG Engineer</span>
-                            <div className="w-1 h-1 bg-slate-600 rounded-full"></div>
+                            <div className="w-1 h-1 bg-gray-600 dark:bg-slate-600 rounded-full"></div>
                             <span>Building Tomorrow's Tech</span>
                         </div>
 
                         <button
                             onClick={scrollToTop}
-                            className="group flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300"
+                            className="group flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-indigo-600/20 to-teal-600/20 dark:from-blue-500/20 dark:to-purple-500/20 border border-indigo-600/30 dark:border-blue-500/30 hover:from-indigo-600/30 hover:to-teal-600/30 dark:hover:from-blue-500/30 dark:hover:to-purple-500/30 transition-all duration-300"
                         >
-                            <span className="text-sm text-blue-400">Back to top</span>
-                            <FaArrowUp className="text-blue-400 group-hover:-translate-y-1 transition-transform duration-300" />
+                            <span className="text-sm text-indigo-600 dark:text-blue-400">Back to top</span>
+                            <FaArrowUp className="text-indigo-600 dark:text-blue-400 group-hover:-translate-y-1 transition-transform duration-300" />
                         </button>
                     </div>
                 </div>
