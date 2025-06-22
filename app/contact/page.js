@@ -30,7 +30,7 @@ export default function Contact() {
     };
 
     return (
-        <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-gray-100 dark:bg-zinc-950 text-gray-900 dark:text-white font-josefin-sans transition-colors duration-200">
+        <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-purple-50 dark:bg-zinc-950 text-gray-900 dark:text-white font-josefin-sans transition-colors duration-200">
             <div className="text-center mb-16 sm:mb-20">
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-wide mb-6">
                     Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400">in touch</span>

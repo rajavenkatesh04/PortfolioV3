@@ -9,14 +9,14 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 import { CiMenuBurger } from "react-icons/ci";
 import { PiArticleNyTimesFill } from "react-icons/pi";
 import ThemeToggle from "@/app/_components/ThemeToggle";
+import {ThemeContext} from "styled-components";
+import {useTheme} from "next-themes";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
-    // Note: If ThemeToggle doesn't expose theme state, use next-themes' useTheme hook:
-    // import { useTheme } from "next-themes";
-    // const { theme } = useTheme();
-    // Then use: src={theme === "dark" ? "/logo light.png" : "/logo dark.png"}
+    const { theme } = useTheme();
+    const logoSrc = theme === "dark" ? "/logo light.png" : "/logo dark.png";
 
     return (
         <nav className="w-full fixed top-0 z-50 bg-white dark:bg-transparent dark:backdrop-blur-xl text-gray-900 dark:text-white dark:sm:bg-black/10 transition-colors duration-200">
@@ -26,11 +26,10 @@ export default function Navbar() {
                     <div className="flex-shrink-0">
                         <Link href="/">
                             <Image
-                                src="/logo dark.png" // Default to dark logo (light mode); overridden in dark mode via CSS
+                                src={logoSrc}
                                 alt="Logo"
                                 width={150}
                                 height={100}
-                                className="dark:[content-url('/logo light.png')]"
                             />
                         </Link>
                     </div>
