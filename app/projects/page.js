@@ -8,9 +8,13 @@ export default function Projects() {
         <div className="flex flex-col justify-center items-center bg-zinc-950 text-white px-4 sm:px-8 lg:px-24 py-12">
             <section id="projects" className="w-full max-w-7xl">
                 <div>
-                    <h1 className="text-4xl sm:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-lime-400 via-lime-500 to-emerald-400 bg-clip-text text-transparent">
-                        Projects
-                    </h1>
+                    <div className="text-center mb-16 sm:mb-20">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-wide">
+                            Projects
+                        </h1>
+                        <div
+                            className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6"></div>
+                    </div>
 
                     {/* Projects Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

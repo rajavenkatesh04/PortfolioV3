@@ -38,10 +38,15 @@ export default function Education() {
                 <div
                     className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 sm:px-8 lg:px-24 py-12 ">
                     <section id="education" className="w-full max-w-4xl ">
-                        {/* Keeping your gradient heading but with cleaner typography */}
-                        <h1 className="mb-2 text-4xl sm:text-5xl font-bold text-center mb-10 bg-gradient-to-r from-lime-400 via-lime-500 to-emerald-400 bg-clip-text text-transparent">
-                            Education
-                        </h1>
+
+                        {/*Clean heading*/}
+                        <div className="text-center mb-16 sm:mb-20">
+                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-wide">
+                                Education
+                            </h1>
+                            <div
+                                className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6"></div>
+                        </div>
 
                         <div className="space-y-8">
                             {educationData.map((education) => (
