@@ -78,11 +78,11 @@ export default function About() {
                         {/* Achievement Stats */}
                         <div className="grid grid-cols-3 gap-6 w-full max-w-md">
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-indigo-600 dark:text-lime-400 mb-1">500+</div>
+                                <div className="text-2xl font-bold text-indigo-600 dark:text-lime-400 mb-1">50+</div>
                                 <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">DSA Problems</div>
                             </div>
                             <div className="text-center">
-                                <div className="text-2xl font-bold text-teal-600 dark:text-emerald-400 mb-1">20+</div>
+                                <div className="text-2xl font-bold text-teal-600 dark:text-emerald-400 mb-1">2+</div>
                                 <div className="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-wider">Projects</div>
                             </div>
                             <div className="text-center">

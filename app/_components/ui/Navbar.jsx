@@ -19,7 +19,7 @@ export default function Navbar() {
     const logoSrc = theme === "dark" ? "/logo light.png" : "/logo dark.png";
 
     return (
-        <nav className="w-full fixed top-0 z-50 bg-white dark:bg-transparent dark:backdrop-blur-xl text-gray-900 dark:text-white dark:sm:bg-black/10 transition-colors duration-200">
+        <nav className="w-full fixed top-0 z-50 bg-white/10 backdrop-blur-xl dark:bg-transparent dark:backdrop-blur-xl text-gray-900 dark:text-white dark:sm:bg-black/10 transition-colors duration-200">
             <div className="max-w-7xl px-4 mx-auto sm:px-6 lg:px-2">
                 <div className="flex justify-between items-center h-16 md:border-b md:border-b-indigo-300 dark:md:border-b-lime-300">
                     {/* Logo */}
