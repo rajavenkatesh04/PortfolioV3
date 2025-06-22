@@ -37,12 +37,10 @@ export default function Navbar() {
                     {/* Desktop Menu */}
                     <div className="hidden md:block">
                         <ul className="flex space-x-8 items-center">
-                            <li>
-                                <ThemeToggle />
-                            </li>
+
                             <li>
                                 <Link
-                                    href="/contact"
+                                    href="#contact"
                                     className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
                                 >
                                     Contact
@@ -60,7 +58,7 @@ export default function Navbar() {
                             </li>
                             <li>
                                 <Link
-                                    href="#blog"
+                                    href="https://blog.rajavenkatesh.me" target={`_blank`}
                                     className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
                                 >
                                     Blog
@@ -76,6 +74,10 @@ export default function Navbar() {
                                     Resume
                                     <LiaFileDownloadSolid className="mx-2 text-indigo-600 dark:text-lime-400 text-xl" />
                                 </a>
+                            </li>
+
+                            <li>
+                                <ThemeToggle />
                             </li>
                         </ul>
                     </div>

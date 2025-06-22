@@ -6,7 +6,7 @@ import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
 
 export default function Projects() {
     return (
-        <div className="min-h-screen bg-indigo-50 dark:bg-black text-gray-900 dark:text-white px-4 sm:px-8 lg:px-24 py-20 transition-colors duration-200">
+        <div className="min-h-screen bg-indigo-50 dark:bg-zinc-950 text-gray-900 dark:text-white px-4 sm:px-8 lg:px-24 py-20 transition-colors duration-200">
             <section id="projects" className="w-full max-w-7xl mx-auto">
 
                 {/* Header */}

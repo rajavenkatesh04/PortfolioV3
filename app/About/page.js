@@ -4,7 +4,7 @@ import Image from "next/image";
 import { HiCode, HiLightBulb } from "react-icons/hi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import { FaJava } from "react-icons/fa";
-import { SiNextdotjs, SiJavascript, SiReact, SiPostgresql, SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiJavascript, SiReact, SiPostgresql, SiTailwindcss, SiMongodb  } from "react-icons/si";
 
 export default function About() {
     const highlights = [
@@ -28,10 +28,12 @@ export default function About() {
     const techStack = [
         { icon: <SiNextdotjs />, name: "Next.js" },
         { icon: <SiReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
         { icon: <SiJavascript />, name: "JavaScript" },
         { icon: <FaJava />, name: "Java" },
         { icon: <SiPostgresql />, name: "PostgreSQL" },
-        { icon: <SiTailwindcss />, name: "Tailwind CSS" }
+        { icon: <SiMongodb />, name: "MongoDB"}
+
     ];
 
     return (
@@ -138,7 +140,7 @@ export default function About() {
 
                 {/* Tech Stack */}
                 <div className="text-center">
-                    <h3 className="text-xl font-light text-gray-900 dark:text-white mb-2">Technical Arsenal</h3>
+                    <h3 className="text-xl font-light text-indigo-600 dark:text-white mb-2">Technical Arsenal</h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-8">Technologies I leverage to build exceptional products</p>
 
                     <div className="flex flex-wrap justify-center gap-6">

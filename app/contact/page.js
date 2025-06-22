@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from "next/image";
 import { IoIosSend } from "react-icons/io";
+import { BiSolidPhoneCall } from "react-icons/bi";
 
 export default function Contact() {
     const [result, setResult] = useState("");
@@ -31,15 +32,23 @@ export default function Contact() {
 
     return (
         <div id="contact" className="w-full px-[12%] py-10 scroll-mt-20 bg-purple-50 dark:bg-zinc-950 text-gray-900 dark:text-white font-josefin-sans transition-colors duration-200">
-            <div className="text-center mb-16 sm:mb-20">
+            {/* Header */}
+            <div className="text-center mb-20">
+                <div
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-600/30 dark:border-lime-400/30 bg-indigo-600/5 dark:bg-lime-400/5 mb-6">
+                    <BiSolidPhoneCall className="text-indigo-600 dark:text-lime-400 text-sm"/>
+                    <span className="text-sm text-indigo-600 dark:text-lime-400 font-medium tracking-wide">Contact Me</span>
+                </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 dark:text-white tracking-wide mb-6">
-                    Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400">in touch</span>
+                    Get in <span
+                    className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400">touch</span>
                 </h1>
                 <div
-                    className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400 mx-auto mt-4 sm:mt-6">
-                </div>
+                    className="w-20 sm:w-24 h-0.5 bg-gradient-to-r from-indigo-600 to-teal-600 dark:from-lime-400 dark:to-emerald-400 mx-auto mb-4"></div>
+                <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
+                    I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.
+                </p>
             </div>
-            <p className="text-center max-w-2xl mx-auto mt-5 mb-12 text-gray-600 dark:text-gray-400">I'd love to hear from you! If you have any questions, comments or feedback, please use the form below.</p>
 
             <form onSubmit={onSubmit} className="max-w-2xl mx-auto">
                 <div className="grid grid-cols-auto gap-6 mt-10 mb-8">
@@ -69,7 +78,7 @@ export default function Contact() {
 
                 <button
                     type="submit"
-                    className="my-2 py-3 px-8 w-max flex items-center justify-between gap-2 bg-gray-100 dark:bg-black/80 text-gray-900 dark:text-white rounded-full hover:border border-indigo-600 dark:border-lime-400 hover:bg-indigo-600/10 dark:hover:bg-lime-400/10 transition-all duration-300"
+                    className="my-2 py-3 px-8 w-max flex items-center justify-between gap-2 bg-indigo-100 dark:bg-black/80 text-gray-900 dark:text-white rounded-full hover:border border-indigo-600 dark:border-lime-400 hover:bg-indigo-600/10 dark:hover:bg-lime-400/10 transition-all duration-300"
                 >
                     Submit now <IoIosSend className="text-indigo-600 dark:text-lime-400"/>
                 </button>
