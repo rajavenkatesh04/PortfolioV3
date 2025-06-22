@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function About() {
+export default function About2() {
     return (
         <div>
             <section

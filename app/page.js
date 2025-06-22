@@ -5,12 +5,13 @@ import Projects from "@/app/projects/page";
 import Footer from "@/app/_components/ui/Footer";
 import Education from "@/app/Education/page";
 import Contact from "@/app/contact/page";
+import About2 from "@/app/About/page2";
 
 export default function Home() {
   return (
     <div>
       <SplitText />
-      <About />
+      <About2 />
         <Projects />
         <Education />
         <Contact />
