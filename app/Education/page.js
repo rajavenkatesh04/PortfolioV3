@@ -1,3 +1,5 @@
+import {HiAcademicCap} from "react-icons/hi2";
+
 export default function Education() {
     const educationData = [
         {
@@ -39,13 +41,22 @@ export default function Education() {
                     className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 sm:px-8 lg:px-24 py-12 ">
                     <section id="education" className="w-full max-w-4xl ">
 
-                        {/*Clean heading*/}
-                        <div className="text-center mb-16 sm:mb-20">
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-wide">
-                                Education
+                        {/* Header */}
+                        <div className="text-center mb-20">
+                            <div
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-lime-400/30 bg-lime-400/5 mb-6">
+                                <HiAcademicCap className="text-lime-400 text-sm"/>
+                                <span className="text-sm text-lime-400 font-medium tracking-wide">Academic Journey</span>
+                            </div>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wide mb-6">
+                                My <span
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">Education</span>
                             </h1>
                             <div
-                                className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6"></div>
+                                className="w-20 sm:w-24 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mb-4"></div>
+                            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                                Building a strong foundation in computer science and engineering excellence
+                            </p>
                         </div>
 
                         <div className="space-y-8">
@@ -102,13 +113,22 @@ export default function Education() {
                 <div
                     className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-6 sm:px-12 lg:px-32 py-16 sm:py-20">
                     <section id="education" className="w-full max-w-5xl">
-                        {/* Clean, minimal heading */}
-                        <div className="text-center mb-16 sm:mb-20">
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-wide">
-                                Education
+                        {/* Header */}
+                        <div className="text-center mb-20">
+                            <div
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-lime-400/30 bg-lime-400/5 mb-6">
+                                <HiAcademicCap className="text-lime-400 text-sm"/>
+                                <span className="text-sm text-lime-400 font-medium tracking-wide">Academic Journey</span>
+                            </div>
+                            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wide mb-6">
+                                My <span
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">Education</span>
                             </h1>
                             <div
-                                className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6"></div>
+                                className="w-20 sm:w-24 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mb-4"></div>
+                            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                                Building a strong foundation in computer science and engineering excellence
+                            </p>
                         </div>
 
                         <div className="space-y-12 sm:space-y-16">

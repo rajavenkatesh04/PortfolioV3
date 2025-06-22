@@ -34,11 +34,12 @@ export default function Contact() {
     return (
         <div id={"contact"} className={"w-full px-[12%] py-10 scroll-mt-20 bg-zinc-950 text-white font-josefin-sans"}>
             <div className="text-center mb-16 sm:mb-20">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-white tracking-wide">
-                    Get in touch!
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-white tracking-wide mb-6">
+                    Get <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-emerald-400">in touch</span>
                 </h1>
                 <div
-                    className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6"></div>
+                    className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 mx-auto mt-4 sm:mt-6">
+                </div>
             </div>
             <p className={"text-center max-w-2xl mx-auto mt-5 mb-12 "}>I'd love to hear from you! If you have any questions, comments or feedback, Please use the form below.</p>
 

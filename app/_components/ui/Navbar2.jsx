@@ -7,165 +7,187 @@ import {IoMdContact, IoMdClose} from "react-icons/io";
 import {GoProjectRoadmap} from "react-icons/go";
 import { LiaFileDownloadSolid } from "react-icons/lia";
 import { CiMenuBurger } from "react-icons/ci";
-import { FaHome, FaUser } from "react-icons/fa";
+import { PiArticleNyTimesFill } from "react-icons/pi";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 50;
-            setScrolled(isScrolled);
+            setScrolled(window.scrollY > 50);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close mobile menu when clicking outside or on link
-    const closeMobileMenu = () => {
-        setIsOpen(false);
-    };
-
     const navItems = [
-        { href: "/", label: "Home", icon: FaHome },
-        { href: "/#about", label: "About", icon: FaUser },
-        { href: "/#projects", label: "Projects", icon: GoProjectRoadmap },
         { href: "/contact", label: "Contact", icon: IoMdContact },
+        { href: "#projects", label: "Projects", icon: GoProjectRoadmap },
+        { href: "#blog", label: "Blog", icon: PiArticleNyTimesFill },
+        { href: "/raja_resume.pdf", label: "Resume", icon: LiaFileDownloadSolid, download: true }
     ];
 
     return(
-        <>
-            <nav className={`w-full fixed top-0 z-50 transition-all duration-300 ${
-                scrolled
-                    ? 'bg-black/50 backdrop-blur-xl border-b border-lime-400/20 shadow-lg shadow-lime-400/5'
-                    : 'bg-transparent backdrop-blur-sm'
-            }`}>
-                <div className="max-w-7xl px-4 mx-auto sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        {/* Logo */}
-                        <div className="flex-shrink-0 group">
-                            <Link href="/" onClick={closeMobileMenu}>
-                                <div className="relative">
-                                    <Image
-                                        src="/logo light.png"
-                                        alt="Logo"
-                                        width={150}
-                                        height={100}
-                                        className="transition-transform duration-300 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-r from-lime-400/20 to-emerald-400/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl"></div>
-                                </div>
-                            </Link>
-                        </div>
-
-                        {/* Desktop Menu */}
-                        <div className="hidden lg:block">
-                            <ul className="flex items-center space-x-1">
-                                {navItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="group relative px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-lime-400/10 flex items-center gap-2"
-                                        >
-                                            <item.icon className="text-lime-400 text-sm group-hover:text-lime-300 transition-colors duration-300" />
-                                            <span className="text-white group-hover:text-lime-300 transition-colors duration-300">
-                                                {item.label}
-                                            </span>
-                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-300"></div>
-                                        </Link>
-                                    </li>
-                                ))}
-
-                                {/* Resume Download Button */}
-                                <li className="ml-4">
-                                    <a
-                                        href="/raja_resume.pdf"
-                                        download
-                                        className="group relative px-6 py-2 bg-gradient-to-r from-lime-400 to-emerald-400 text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-lime-400/25 hover:-translate-y-0.5 flex items-center gap-2"
-                                    >
-                                        <span className="relative z-10">Resume</span>
-                                        <LiaFileDownloadSolid className="relative z-10 text-lg group-hover:animate-bounce" />
-                                        <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Mobile Menu Button */}
-                        <div className="lg:hidden">
-                            <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="relative p-2 rounded-lg bg-slate-800/50 border border-lime-400/30 hover:bg-lime-400/10 transition-all duration-300"
-                                aria-label="Toggle menu"
-                            >
-                                <div className="relative w-6 h-6">
-                                    <CiMenuBurger
-                                        className={`absolute text-xl text-lime-400 transition-all duration-300 ${
-                                            isOpen ? 'opacity-0 rotate-180' : 'opacity-100 rotate-0'
-                                        }`}
-                                    />
-                                    <IoMdClose
-                                        className={`absolute text-xl text-lime-400 transition-all duration-300 ${
-                                            isOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-180'
-                                        }`}
-                                    />
-                                </div>
-                            </button>
-                        </div>
+        <nav className={`w-full fixed top-0 z-50 transition-all duration-700 ease-out ${
+            scrolled
+                ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-lime-400/5'
+                : 'bg-transparent backdrop-blur-sm'
+        }`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className={`flex justify-between items-center transition-all duration-500 ${
+                    scrolled ? 'h-14' : 'h-20'
+                }`}>
+                    {/* Logo with glow effect */}
+                    <div className="flex-shrink-0 group">
+                        <Link href="/" className="block relative">
+                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/20 to-emerald-400/20 rounded-full blur-xl scale-0 group-hover:scale-110 transition-transform duration-500"></div>
+                            <Image
+                                src="/logo light.png"
+                                alt="Logo"
+                                width={150}
+                                height={100}
+                                className={`relative z-10 transition-all duration-500 ${
+                                    scrolled ? 'h-8 w-auto' : 'h-12 w-auto'
+                                }`}
+                            />
+                        </Link>
                     </div>
 
-                    {/* Mobile Menu */}
-                    <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-                        isOpen
-                            ? 'max-h-96 opacity-100'
-                            : 'max-h-0 opacity-0 overflow-hidden'
-                    }`}>
-                        <div className="border-t border-lime-400/20 bg-slate-900/50 backdrop-blur-lg rounded-b-2xl mt-2">
-                            <ul className="py-4 space-y-2 px-4">
-                                {navItems.map((item, index) => (
-                                    <li key={index}>
+                    {/* Desktop Menu with creative hover effects */}
+                    <div className="hidden md:block">
+                        <ul className="flex items-center space-x-2">
+                            {navItems.map((item, index) => (
+                                <li key={index} className="relative group">
+                                    {item.download ? (
+                                        <a
+                                            href={item.href}
+                                            download
+                                            className="relative flex items-center px-6 py-3 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                        >
+                                            {/* Animated background */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/10 to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                                            {/* Animated underline */}
+                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+
+                                            {/* Content */}
+                                            <span className="relative z-10 mr-2">{item.label}</span>
+                                            <item.icon className="relative z-10 text-lg text-lime-400 group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+
+                                            {/* Floating particles effect */}
+                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-lime-400 rounded-full animate-ping"></div>
+                                                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                            </div>
+                                        </a>
+                                    ) : (
                                         <Link
                                             href={item.href}
-                                            onClick={closeMobileMenu}
-                                            className="group flex items-center gap-3 px-4 py-3 rounded-lg font-medium text-white hover:bg-lime-400/10 hover:text-lime-300 transition-all duration-300"
+                                            className="relative flex items-center px-6 py-3 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
                                         >
-                                            <item.icon className="text-lime-400 text-lg group-hover:text-lime-300 transition-colors duration-300" />
-                                            {item.label}
-                                            <div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                <div className="w-2 h-2 bg-lime-400 rounded-full"></div>
+                                            {/* Animated background */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/10 to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                                            {/* Animated underline */}
+                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+
+                                            {/* Content */}
+                                            <span className="relative z-10 mr-2">{item.label}</span>
+                                            <item.icon className="relative z-10 text-lg text-lime-400 group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+
+                                            {/* Floating particles effect */}
+                                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-lime-400 rounded-full animate-ping"></div>
+                                                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
                                             </div>
                                         </Link>
-                                    </li>
-                                ))}
-
-                                {/* Mobile Resume Button */}
-                                <li className="pt-2 border-t border-slate-700/50">
-                                    <a
-                                        href="/raja_resume.pdf"
-                                        download
-                                        className="group w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-lime-400 to-emerald-400 text-black font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-lime-400/25"
-                                        onClick={closeMobileMenu}
-                                    >
-                                        <span>Download Resume</span>
-                                        <LiaFileDownloadSolid className="text-lg group-hover:animate-bounce" />
-                                    </a>
+                                    )}
                                 </li>
-                            </ul>
-                        </div>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Mobile Menu Button with morphing animation */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="relative p-3 rounded-xl bg-gradient-to-r from-lime-400/10 to-emerald-400/10 border border-lime-400/20 hover:border-lime-400/40 transition-all duration-300 group"
+                            aria-label="Toggle menu"
+                        >
+                            <div className="relative w-6 h-6">
+                                <div className={`absolute inset-0 transition-all duration-500 ease-out ${
+                                    isOpen ? 'rotate-180 scale-75' : 'rotate-0 scale-100'
+                                }`}>
+                                    {isOpen ?
+                                        <IoMdClose className="w-full h-full text-lime-400" /> :
+                                        <CiMenuBurger className="w-full h-full text-lime-400" />
+                                    }
+                                </div>
+                            </div>
+
+                            {/* Pulsing ring effect */}
+                            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-lime-400/20 to-emerald-400/20 scale-100 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                        </button>
                     </div>
                 </div>
-            </nav>
 
-            {/* Mobile Menu Overlay */}
-            {isOpen && (
-                <div
-                    className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-                    onClick={closeMobileMenu}
-                ></div>
-            )}
-        </>
+                {/* Mobile Menu with slide and fade animation */}
+                <div className={`md:hidden overflow-hidden transition-all duration-700 ease-out ${
+                    isOpen
+                        ? 'max-h-96 opacity-100'
+                        : 'max-h-0 opacity-0'
+                }`}>
+                    <div className="border-t border-gradient-to-r from-lime-400/20 to-emerald-400/20 bg-black/95 backdrop-blur-xl">
+                        <ul className="py-6 space-y-2">
+                            {navItems.map((item, index) => (
+                                <li
+                                    key={index}
+                                    className={`transform transition-all duration-500 ease-out ${
+                                        isOpen
+                                            ? 'translate-x-0 opacity-100'
+                                            : 'translate-x-8 opacity-0'
+                                    }`}
+                                    style={{ transitionDelay: `${index * 100}ms` }}
+                                >
+                                    {item.download ? (
+                                        <a
+                                            href={item.href}
+                                            download
+                                            className="relative group flex items-center px-6 py-4 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {/* Mobile hover effect */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/5 to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+                                            <span className="relative z-10 mr-3">{item.label}</span>
+                                            <item.icon className="relative z-10 text-xl text-lime-400 group-hover:text-emerald-400 transition-all duration-300" />
+
+                                            {/* Side accent line */}
+                                            <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-lime-400 to-emerald-400 group-hover:h-full transition-all duration-300"></div>
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            href={item.href}
+                                            className="relative group flex items-center px-6 py-4 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                            onClick={() => setIsOpen(false)}
+                                        >
+                                            {/* Mobile hover effect */}
+                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/5 to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+                                            <span className="relative z-10 mr-3">{item.label}</span>
+                                            <item.icon className="relative z-10 text-xl text-lime-400 group-hover:text-emerald-400 transition-all duration-300" />
+
+                                            {/* Side accent line */}
+                                            <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-lime-400 to-emerald-400 group-hover:h-full transition-all duration-300"></div>
+                                        </Link>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     )
 }
