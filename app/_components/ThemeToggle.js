@@ -96,7 +96,6 @@ const ThemeToggle = () => {
     );
 }
 
-// ... rest of your styled components remain the same
 const StyledWrapper = styled.div`
   .switch {
     position: relative;
@@ -150,8 +149,6 @@ const StyledWrapper = styled.div`
     -ms-transform: translateX(20px);
     transform: translateX(20px);
     background-color: white;
-    -webkit-animation: rotate-center 0.6s ease-in-out both;
-    animation: rotate-center 0.6s ease-in-out both;
   }
 
   .moon-dot {
@@ -368,17 +365,6 @@ const StyledWrapper = styled.div`
 
     100% {
       transform: scale(1);
-    }
-  }
-
-  @keyframes rotate-center {
-    0% {
-      -webkit-transform: rotate(0);
-      transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
     }
   }
 `;
