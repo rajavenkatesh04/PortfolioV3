@@ -6,16 +6,26 @@ import { useTheme } from 'next-themes';
 
 const ThemeToggle = () => {
     const [mounted, setMounted] = useState(false);
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, systemTheme } = useTheme();
 
     useEffect(() => {
         setMounted(true);
     }, []);
 
+    // Don't render anything until mounted to prevent hydration mismatch
     if (!mounted) return null;
 
+    // Determine the current effective theme
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+
     const handleToggle = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark');
+        // If currently using system theme, switch to the opposite of what system shows
+        if (theme === 'system') {
+            setTheme(systemTheme === 'dark' ? 'light' : 'dark');
+        } else {
+            // If manually set, just toggle between light and dark
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        }
     };
 
     return (
@@ -24,7 +34,7 @@ const ThemeToggle = () => {
                 <input
                     id="input"
                     type="checkbox"
-                    checked={theme === 'dark'}
+                    checked={currentTheme === 'dark'}
                     onChange={handleToggle}
                 />
                 <div className="slider round">
@@ -86,12 +96,13 @@ const ThemeToggle = () => {
     );
 }
 
+// ... rest of your styled components remain the same
 const StyledWrapper = styled.div`
   .switch {
     position: relative;
     display: inline-block;
-    width: 48px; /* Reduced from 60px */
-    height: 28px; /* Reduced from 34px */
+    width: 48px;
+    height: 28px;
   }
 
   .switch #input {
@@ -117,8 +128,8 @@ const StyledWrapper = styled.div`
   .sun-moon {
     position: absolute;
     content: "";
-    height: 20px; /* Reduced from 26px */
-    width: 20px; /* Reduced from 26px */
+    height: 20px;
+    width: 20px;
     left: 4px;
     bottom: 4px;
     background-color: yellow;
@@ -135,7 +146,7 @@ const StyledWrapper = styled.div`
   }
 
   #input:checked + .slider .sun-moon {
-    -webkit-transform: translateX(20px); /* Reduced from 26px */
+    -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
     background-color: white;
@@ -154,7 +165,7 @@ const StyledWrapper = styled.div`
   }
 
   .slider.round {
-    border-radius: 28px; /* Reduced from 34px */
+    border-radius: 28px;
   }
 
   .slider.round .sun-moon {
@@ -162,37 +173,37 @@ const StyledWrapper = styled.div`
   }
 
   #moon-dot-1 {
-    left: 8px; /* Scaled from 10px */
-    top: 2px; /* Scaled from 3px */
+    left: 8px;
+    top: 2px;
     position: absolute;
-    width: 5px; /* Scaled from 6px */
+    width: 5px;
     height: 5px;
     z-index: 4;
   }
 
   #moon-dot-2 {
     left: 2px;
-    top: 8px; /* Scaled from 10px */
+    top: 8px;
     position: absolute;
-    width: 8px; /* Scaled from 10px */
+    width: 8px;
     height: 8px;
     z-index: 4;
   }
 
   #moon-dot-3 {
-    left: 13px; /* Scaled from 16px */
-    top: 15px; /* Scaled from 18px */
+    left: 13px;
+    top: 15px;
     position: absolute;
-    width: 2px; /* Scaled from 3px */
+    width: 2px;
     height: 2px;
     z-index: 4;
   }
 
   #light-ray-1 {
-    left: -6px; /* Scaled from -8px */
+    left: -6px;
     top: -6px;
     position: absolute;
-    width: 34px; /* Scaled from 43px */
+    width: 34px;
     height: 34px;
     z-index: -1;
     fill: white;
@@ -203,7 +214,7 @@ const StyledWrapper = styled.div`
     left: -50%;
     top: -50%;
     position: absolute;
-    width: 44px; /* Scaled from 55px */
+    width: 44px;
     height: 44px;
     z-index: -1;
     fill: white;
@@ -211,10 +222,10 @@ const StyledWrapper = styled.div`
   }
 
   #light-ray-3 {
-    left: -14px; /* Scaled from -18px */
+    left: -14px;
     top: -14px;
     position: absolute;
-    width: 48px; /* Scaled from 60px */
+    width: 48px;
     height: 48px;
     z-index: -1;
     fill: white;
@@ -239,39 +250,39 @@ const StyledWrapper = styled.div`
   }
 
   #cloud-1 {
-    left: 24px; /* Scaled from 30px */
-    top: 12px; /* Scaled from 15px */
-    width: 32px; /* Scaled from 40px */
+    left: 24px;
+    top: 12px;
+    width: 32px;
   }
 
   #cloud-2 {
-    left: 35px; /* Scaled from 44px */
-    top: 8px; /* Scaled from 10px */
-    width: 16px; /* Scaled from 20px */
+    left: 35px;
+    top: 8px;
+    width: 16px;
   }
 
   #cloud-3 {
-    left: 14px; /* Scaled from 18px */
-    top: 19px; /* Scaled from 24px */
-    width: 24px; /* Scaled from 30px */
+    left: 14px;
+    top: 19px;
+    width: 24px;
   }
 
   #cloud-4 {
-    left: 29px; /* Scaled from 36px */
-    top: 14px; /* Scaled from 18px */
-    width: 32px; /* Scaled from 40px */
+    left: 29px;
+    top: 14px;
+    width: 32px;
   }
 
   #cloud-5 {
-    left: 38px; /* Scaled from 48px */
-    top: 11px; /* Scaled from 14px */
-    width: 16px; /* Scaled from 20px */
+    left: 38px;
+    top: 11px;
+    width: 16px;
   }
 
   #cloud-6 {
-    left: 18px; /* Scaled from 22px */
-    top: 21px; /* Scaled from 26px */
-    width: 24px; /* Scaled from 30px */
+    left: 18px;
+    top: 21px;
+    width: 24px;
   }
 
   @keyframes cloud-move {
@@ -280,11 +291,11 @@ const StyledWrapper = styled.div`
     }
 
     40% {
-      transform: translateX(3px); /* Scaled from 4px */
+      transform: translateX(3px);
     }
 
     80% {
-      transform: translateX(-3px); /* Scaled from -4px */
+      transform: translateX(-3px);
     }
 
     100% {
@@ -293,7 +304,7 @@ const StyledWrapper = styled.div`
   }
 
   .stars {
-    transform: translateY(-26px); /* Scaled from -32px */
+    transform: translateY(-26px);
     opacity: 0;
     transition: 0.4s;
   }
@@ -316,29 +327,29 @@ const StyledWrapper = styled.div`
   }
 
   #star-1 {
-    width: 16px; /* Scaled from 20px */
+    width: 16px;
     top: 2px;
-    left: 2px; /* Scaled from 3px */
+    left: 2px;
     animation-delay: 0.3s;
   }
 
   #star-2 {
-    width: 5px; /* Scaled from 6px */
-    top: 13px; /* Scaled from 16px */
-    left: 2px; /* Scaled from 3px */
+    width: 5px;
+    top: 13px;
+    left: 2px;
   }
 
   #star-3 {
-    width: 10px; /* Scaled from 12px */
-    top: 16px; /* Scaled from 20px */
-    left: 8px; /* Scaled from 10px */
+    width: 10px;
+    top: 16px;
+    left: 8px;
     animation-delay: 0.6s;
   }
 
   #star-4 {
-    width: 14px; /* Scaled from 18px */
+    width: 14px;
     top: 0px;
-    left: 14px; /* Scaled from 18px */
+    left: 14px;
     animation-delay: 1.3s;
   }
 

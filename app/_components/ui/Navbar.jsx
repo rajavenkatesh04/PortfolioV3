@@ -9,8 +9,7 @@ import { LiaFileDownloadSolid } from "react-icons/lia";
 import { CiMenuBurger } from "react-icons/ci";
 import { PiArticleNyTimesFill } from "react-icons/pi";
 import ThemeToggle from "@/app/_components/ThemeToggle";
-import {ThemeContext} from "styled-components";
-import {useTheme} from "next-themes";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -37,45 +36,96 @@ export default function Navbar() {
                     {/* Desktop Menu */}
                     <div className="hidden md:block">
                         <ul className="flex space-x-8 items-center">
-
-                            <li>
+                            <li className="relative group">
                                 <Link
                                     href="#contact"
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                 >
-                                    Contact
-                                    <IoMdContact className="mx-2 text-indigo-600 dark:text-lime-400 text-xl" />
+                                    {/* Animated background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                                    {/* Animated underline */}
+                                    <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+
+                                    {/* Content */}
+                                    <span className="relative z-10 mr-2">Contact</span>
+                                    <IoMdContact className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+
+                                    {/* Floating particles effect */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-indigo-400 dark:bg-lime-400 rounded-full animate-ping"></div>
+                                        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-teal-400 dark:bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                    </div>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="relative group">
                                 <Link
                                     href="#projects"
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                 >
-                                    Projects
-                                    <GoProjectRoadmap className="mx-2 text-indigo-600 dark:text-lime-400 text-xl" />
+                                    {/* Animated background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                                    {/* Animated underline */}
+                                    <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+
+                                    {/* Content */}
+                                    <span className="relative z-10 mr-2">Projects</span>
+                                    <GoProjectRoadmap className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+
+                                    {/* Floating particles effect */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-indigo-400 dark:bg-lime-400 rounded-full animate-ping"></div>
+                                        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-teal-400 dark:bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                    </div>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="relative group">
                                 <Link
-                                    href="https://blog.rajavenkatesh.me" target={`_blank`}
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    href="https://blog.rajavenkatesh.me"
+                                    target="_blank"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                 >
-                                    Blog
-                                    <PiArticleNyTimesFill className="mx-2 text-indigo-600 dark:text-lime-400 text-xl" />
+                                    {/* Animated background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                                    {/* Animated underline */}
+                                    <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+
+                                    {/* Content */}
+                                    <span className="relative z-10 mr-2">Blog</span>
+                                    <PiArticleNyTimesFill className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+
+                                    {/* Floating particles effect */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-indigo-400 dark:bg-lime-400 rounded-full animate-ping"></div>
+                                        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-teal-400 dark:bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                    </div>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="relative group">
                                 <a
                                     href="/raja_resume.pdf"
                                     download
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                 >
-                                    Resume
-                                    <LiaFileDownloadSolid className="mx-2 text-indigo-600 dark:text-lime-400 text-xl" />
+                                    {/* Animated background */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+
+                                    {/* Animated underline */}
+                                    <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+
+                                    {/* Content */}
+                                    <span className="relative z-10 mr-2">Resume</span>
+                                    <LiaFileDownloadSolid className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+
+                                    {/* Floating particles effect */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-indigo-400 dark:bg-lime-400 rounded-full animate-ping"></div>
+                                        <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-teal-400 dark:bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                    </div>
                                 </a>
                             </li>
-
                             <li>
                                 <ThemeToggle />
                             </li>
@@ -84,9 +134,7 @@ export default function Navbar() {
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex gap-4">
-
                         <ThemeToggle />
-
                         <button onClick={() => setIsOpen(!isOpen)}>
                             {isOpen ? (
                                 <IoMdClose className="text-2xl text-indigo-600 dark:text-lime-400" />
@@ -101,45 +149,69 @@ export default function Navbar() {
                 {isOpen && (
                     <div className="border-t border-t-indigo-300 dark:border-t-lime-300 mb-5 md:hidden">
                         <ul className="py-5 space-y-5">
-                            <li>
+                            <li className="relative group">
                                 <Link
                                     href="/contact"
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    Contact
-                                    <IoMdContact className="mx-2 text-indigo-600 dark:text-lime-500 text-xl" />
+                                    {/* Mobile hover effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/5 to-teal-400/5 dark:from-lime-400/5 dark:to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+                                    <span className="relative z-10 mr-3">Contact</span>
+                                    <IoMdContact className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 transition-all duration-300" />
+
+                                    {/* Side accent line */}
+                                    <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:h-full transition-all duration-300"></div>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="relative group">
                                 <Link
                                     href="#projects"
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    Projects
-                                    <GoProjectRoadmap className="mx-2 text-indigo-600 dark:text-lime-500 text-xl" />
+                                    {/* Mobile hover effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/5 to-teal-400/5 dark:from-lime-400/5 dark:to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+                                    <span className="relative z-10 mr-3">Projects</span>
+                                    <GoProjectRoadmap className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 transition-all duration-300" />
+
+                                    {/* Side accent line */}
+                                    <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:h-full transition-all duration-300"></div>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="relative group">
                                 <Link
                                     href="#blog"
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    Blog
-                                    <PiArticleNyTimesFill className="mx-2 text-indigo-600 dark:text-lime-500 text-xl" />
+                                    {/* Mobile hover effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/5 to-teal-400/5 dark:from-lime-400/5 dark:to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+                                    <span className="relative z-10 mr-3">Blog</span>
+                                    <PiArticleNyTimesFill className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 transition-all duration-300" />
+
+                                    {/* Side accent line */}
+                                    <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:h-full transition-all duration-300"></div>
                                 </Link>
                             </li>
-                            <li>
+                            <li className="relative group">
                                 <a
                                     href="/raja_resume.pdf"
                                     download
-                                    className="py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-colors duration-300 inline-flex items-center"
+                                    className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                     onClick={() => setIsOpen(false)}
                                 >
-                                    Resume
-                                    <LiaFileDownloadSolid className="mx-2 text-indigo-600 dark:text-lime-500 text-xl" />
+                                    {/* Mobile hover effect */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/5 to-teal-400/5 dark:from-lime-400/5 dark:to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+
+                                    <span className="relative z-10 mr-3">Resume</span>
+                                    <LiaFileDownloadSolid className="relative z-10 text-xl text-indigo-600 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 transition-all duration-300" />
+
+                                    {/* Side accent line */}
+                                    <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:h-full transition-all duration-300"></div>
                                 </a>
                             </li>
                         </ul>

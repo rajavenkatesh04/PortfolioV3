@@ -22,7 +22,7 @@ export default function Contact() {
         const data = await response.json();
 
         if (data.success) {
-            setResult("Form Submitted Successfully");
+            setResult("Submitted Successfully");
             event.target.reset();
         } else {
             console.log("Error", data);
@@ -78,7 +78,7 @@ export default function Contact() {
 
                 <button
                     type="submit"
-                    className="my-2 py-3 px-8 w-max flex items-center justify-between gap-2 bg-indigo-100 dark:bg-black/80 text-gray-900 dark:text-white rounded-full hover:border border-indigo-600 dark:border-lime-400 hover:bg-indigo-600/10 dark:hover:bg-lime-400/10 transition-all duration-300"
+                    className="my-2 py-3 px-8 w-max flex items-center justify-between gap-2 bg-indigo-50 border border-indigo-600 dark:bg-black/80 text-gray-900 dark:text-white rounded-full hover:border border-indigo-600 dark:border-lime-400 hover:bg-indigo-600/10 dark:hover:bg-lime-400/10 transition-all duration-300"
                 >
                     Submit now <IoIosSend className="text-indigo-600 dark:text-lime-400"/>
                 </button>

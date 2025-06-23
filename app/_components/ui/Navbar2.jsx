@@ -8,10 +8,15 @@ import {GoProjectRoadmap} from "react-icons/go";
 import { LiaFileDownloadSolid } from "react-icons/lia";
 import { CiMenuBurger } from "react-icons/ci";
 import { PiArticleNyTimesFill } from "react-icons/pi";
+import ThemeToggle from "@/app/_components/ThemeToggle";
+import {useTheme} from "next-themes";
 
-export default function Navbar() {
+export default function Navbar2() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
+    const { theme } = useTheme();
+    const logoSrc = theme === "dark" ? "/logo light.png" : "/logo dark.png";
 
     useEffect(() => {
         const handleScroll = () => {
@@ -25,13 +30,13 @@ export default function Navbar() {
         { href: "/contact", label: "Contact", icon: IoMdContact },
         { href: "#projects", label: "Projects", icon: GoProjectRoadmap },
         { href: "#blog", label: "Blog", icon: PiArticleNyTimesFill },
-        { href: "/raja_resume.pdf", label: "Resume", icon: LiaFileDownloadSolid, download: true }
+        { href: "/raja_resume.pdf", label: "Resume", icon: LiaFileDownloadSolid, download: true },
     ];
 
     return(
         <nav className={`w-full fixed top-0 z-50 transition-all duration-700 ease-out ${
             scrolled
-                ? 'bg-black/95 backdrop-blur-xl shadow-2xl shadow-lime-400/5'
+                ? 'bg-white/95 dark:bg-black/95 backdrop-blur-xl shadow-2xl shadow-indigo-400/5 dark:shadow-lime-400/5'
                 : 'bg-transparent backdrop-blur-sm'
         }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,9 +46,9 @@ export default function Navbar() {
                     {/* Logo with glow effect */}
                     <div className="flex-shrink-0 group">
                         <Link href="/" className="block relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/20 to-emerald-400/20 rounded-full blur-xl scale-0 group-hover:scale-110 transition-transform duration-500"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 to-teal-400/20 dark:from-lime-400/20 dark:to-emerald-400/20 rounded-full blur-xl scale-0 group-hover:scale-110 transition-transform duration-500"></div>
                             <Image
-                                src="/logo light.png"
+                                src={logoSrc}
                                 alt="Logo"
                                 width={150}
                                 height={100}
@@ -52,6 +57,8 @@ export default function Navbar() {
                                 }`}
                             />
                         </Link>
+
+                        <ThemeToggle />
                     </div>
 
                     {/* Desktop Menu with creative hover effects */}
@@ -63,43 +70,43 @@ export default function Navbar() {
                                         <a
                                             href={item.href}
                                             download
-                                            className="relative flex items-center px-6 py-3 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                            className="relative flex items-center px-6 py-3 text-sm font-medium text-gray-700 dark:text-zinc-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 overflow-hidden"
                                         >
                                             {/* Animated background */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/10 to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
 
                                             {/* Animated underline */}
-                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
 
                                             {/* Content */}
                                             <span className="relative z-10 mr-2">{item.label}</span>
-                                            <item.icon className="relative z-10 text-lg text-lime-400 group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+                                            <item.icon className="relative z-10 text-lg text-indigo-400 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
 
                                             {/* Floating particles effect */}
                                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-lime-400 rounded-full animate-ping"></div>
-                                                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-indigo-400 dark:bg-lime-400 rounded-full animate-ping"></div>
+                                                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-teal-400 dark:bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
                                             </div>
                                         </a>
                                     ) : (
                                         <Link
                                             href={item.href}
-                                            className="relative flex items-center px-6 py-3 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                            className="relative flex items-center px-6 py-3 text-sm font-medium text-gray-700 dark:text-zinc-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 overflow-hidden"
                                         >
                                             {/* Animated background */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/10 to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
 
                                             {/* Animated underline */}
-                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-lime-400 to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
+                                            <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:w-full group-hover:left-0 transition-all duration-500 ease-out"></div>
 
                                             {/* Content */}
                                             <span className="relative z-10 mr-2">{item.label}</span>
-                                            <item.icon className="relative z-10 text-lg text-lime-400 group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
+                                            <item.icon className="relative z-10 text-lg text-indigo-400 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 group-hover:rotate-12 transition-all duration-300" />
 
                                             {/* Floating particles effect */}
                                             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-lime-400 rounded-full animate-ping"></div>
-                                                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
+                                                <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-indigo-400 dark:bg-lime-400 rounded-full animate-ping"></div>
+                                                <div className="absolute top-1/3 right-1/4 w-1 h-1 bg-teal-400 dark:bg-emerald-400 rounded-full animate-ping animation-delay-200"></div>
                                             </div>
                                         </Link>
                                     )}
@@ -112,7 +119,7 @@ export default function Navbar() {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="relative p-3 rounded-xl bg-gradient-to-r from-lime-400/10 to-emerald-400/10 border border-lime-400/20 hover:border-lime-400/40 transition-all duration-300 group"
+                            className="relative p-3 rounded-xl bg-gradient-to-r from-indigo-400/10 to-teal-400/10 dark:from-lime-400/10 dark:to-emerald-400/10 border border-indigo-400/20 dark:border-lime-400/20 hover:border-indigo-400/40 dark:hover:border-lime-400/40 transition-all duration-300 group"
                             aria-label="Toggle menu"
                         >
                             <div className="relative w-6 h-6">
@@ -120,14 +127,14 @@ export default function Navbar() {
                                     isOpen ? 'rotate-180 scale-75' : 'rotate-0 scale-100'
                                 }`}>
                                     {isOpen ?
-                                        <IoMdClose className="w-full h-full text-lime-400" /> :
-                                        <CiMenuBurger className="w-full h-full text-lime-400" />
+                                        <IoMdClose className="w-full h-full text-indigo-400 dark:text-lime-400" /> :
+                                        <CiMenuBurger className="w-full h-full text-indigo-400 dark:text-lime-400" />
                                     }
                                 </div>
                             </div>
 
                             {/* Pulsing ring effect */}
-                            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-lime-400/20 to-emerald-400/20 scale-100 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-400/20 to-teal-400/20 dark:from-lime-400/20 dark:to-emerald-400/20 scale-100 group-hover:scale-110 opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                         </button>
                     </div>
                 </div>
@@ -138,7 +145,7 @@ export default function Navbar() {
                         ? 'max-h-96 opacity-100'
                         : 'max-h-0 opacity-0'
                 }`}>
-                    <div className="border-t border-gradient-to-r from-lime-400/20 to-emerald-400/20 bg-black/95 backdrop-blur-xl">
+                    <div className="border-t border-gradient-to-r from-indigo-400/20 to-teal-400/20 dark:from-lime-400/20 dark:to-emerald-400/20 bg-white/95 dark:bg-black/95 backdrop-blur-xl">
                         <ul className="py-6 space-y-2">
                             {navItems.map((item, index) => (
                                 <li
@@ -154,32 +161,32 @@ export default function Navbar() {
                                         <a
                                             href={item.href}
                                             download
-                                            className="relative group flex items-center px-6 py-4 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                            className="relative group flex items-center px-6 py-4 text-sm font-medium text-gray-700 dark:text-zinc-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 overflow-hidden"
                                             onClick={() => setIsOpen(false)}
                                         >
                                             {/* Mobile hover effect */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/5 to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/5 to-teal-400/5 dark:from-lime-400/5 dark:to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
 
                                             <span className="relative z-10 mr-3">{item.label}</span>
-                                            <item.icon className="relative z-10 text-xl text-lime-400 group-hover:text-emerald-400 transition-all duration-300" />
+                                            <item.icon className="relative z-10 text-xl text-indigo-400 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 transition-all duration-300" />
 
                                             {/* Side accent line */}
-                                            <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-lime-400 to-emerald-400 group-hover:h-full transition-all duration-300"></div>
+                                            <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:h-full transition-all duration-300"></div>
                                         </a>
                                     ) : (
                                         <Link
                                             href={item.href}
-                                            className="relative group flex items-center px-6 py-4 text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 overflow-hidden"
+                                            className="relative group flex items-center px-6 py-4 text-sm font-medium text-gray-700 dark:text-zinc-300 hover:text-gray-900 dark:hover:text-white transition-all duration-300 overflow-hidden"
                                             onClick={() => setIsOpen(false)}
                                         >
                                             {/* Mobile hover effect */}
-                                            <div className="absolute inset-0 bg-gradient-to-r from-lime-400/5 to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/5 to-teal-400/5 dark:from-lime-400/5 dark:to-emerald-400/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
 
                                             <span className="relative z-10 mr-3">{item.label}</span>
-                                            <item.icon className="relative z-10 text-xl text-lime-400 group-hover:text-emerald-400 transition-all duration-300" />
+                                            <item.icon className="relative z-10 text-xl text-indigo-400 dark:text-lime-400 group-hover:text-teal-400 dark:group-hover:text-emerald-400 transition-all duration-300" />
 
                                             {/* Side accent line */}
-                                            <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-lime-400 to-emerald-400 group-hover:h-full transition-all duration-300"></div>
+                                            <div className="absolute left-0 top-0 w-1 h-0 bg-gradient-to-b from-indigo-400 to-teal-400 dark:from-lime-400 dark:to-emerald-400 group-hover:h-full transition-all duration-300"></div>
                                         </Link>
                                     )}
                                 </li>

@@ -1,11 +1,17 @@
-// components/ThemeProvider.js
-'use client'
 import { ThemeProvider } from 'next-themes'
 
-export default function Providers({ children }) {
+export default function RootLayout({ children }) {
     return (
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <html lang="en" suppressHydrationWarning>
+        <body>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem={true}
+        >
             {children}
         </ThemeProvider>
+        </body>
+        </html>
     )
 }

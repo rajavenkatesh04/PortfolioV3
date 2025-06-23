@@ -3,6 +3,7 @@ import { Josefin_Sans } from 'next/font/google';
 import Providers from "@/app/_components/ThemeProvider";
 import "./globals.css";
 import Navbar from "@/app/_components/ui/Navbar";
+import Navbar2 from "@/app/_components/ui/Navbar2";
 import { Analytics } from "@vercel/analytics/next"
 
 
