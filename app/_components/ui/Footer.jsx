@@ -41,7 +41,7 @@ export default function Footer() {
                 });
             } catch (error) {
                 console.error('Weather fetch failed:', error);
-                setWeather({ temperature: '32', weatherCode: 0 }); // fallback
+                setWeather({ temperature: '0', weatherCode: 0 }); // fallback
             }
         };
 
@@ -78,7 +78,7 @@ export default function Footer() {
         },
         {
             name: "Email",
-            url: "mailto:your.email@example.com",
+            url: "mailto:grv.9604@gmail.com",
             icon: FaEnvelope,
             hoverColor: "hover:text-red-400 hover:bg-red-500/10 hover:border-red-500/30"
         }

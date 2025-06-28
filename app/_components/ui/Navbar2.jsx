@@ -30,7 +30,7 @@ export default function Navbar2() {
         { href: "/contact", label: "Contact", icon: IoMdContact },
         { href: "#projects", label: "Projects", icon: GoProjectRoadmap },
         { href: "#blog", label: "Blog", icon: PiArticleNyTimesFill },
-        { href: "/raja_resume.pdf", label: "Resume", icon: LiaFileDownloadSolid, download: true },
+        { href: "/Raja_FullStack_Java_Developer.pdf", label: "Resume", icon: LiaFileDownloadSolid, download: true },
     ];
 
     return(

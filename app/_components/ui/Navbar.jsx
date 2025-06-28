@@ -105,7 +105,7 @@ export default function Navbar() {
                             </li>
                             <li className="relative group">
                                 <a
-                                    href="/raja_resume.pdf"
+                                    href="/Raja_FullStack_Java_Developer.pdf"
                                     download
                                     className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                 >
@@ -151,7 +151,7 @@ export default function Navbar() {
                         <ul className="py-5 space-y-5">
                             <li className="relative group">
                                 <Link
-                                    href="/contact"
+                                    href="#contact"
                                     className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                     onClick={() => setIsOpen(false)}
                                 >
@@ -199,7 +199,7 @@ export default function Navbar() {
                             </li>
                             <li className="relative group">
                                 <a
-                                    href="/raja_resume.pdf"
+                                    href="/Raja_FullStack_Java_Developer.pdf"
                                     download
                                     className="relative flex items-center py-2 px-3 font-medium text-gray-900 dark:text-white hover:text-indigo-600 dark:hover:text-lime-500 transition-all duration-300 overflow-hidden"
                                     onClick={() => setIsOpen(false)}

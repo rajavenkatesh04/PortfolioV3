@@ -140,7 +140,7 @@ export default function About() {
 
                 {/* Tech Stack */}
                 <div className="text-center">
-                    <h3 className="text-xl font-light text-indigo-600 dark:text-white mb-2">Technical Arsenal</h3>
+                    <h3 className="text-xl font-light text-indigo-600 dark:text-lime-400 mb-2">Technical Arsenal</h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-8">Technologies I leverage to build exceptional products</p>
 
                     <div className="flex flex-wrap justify-center gap-6">
