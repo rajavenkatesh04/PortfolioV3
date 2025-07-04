@@ -8,11 +8,11 @@ export const projects = [
         technologies: ["React", "Next.js", "Tailwind CSS", "MongoDB"]
     },
     {
-        title: "Hostel-X",
+        title: "Hostel",
         liveLink: "https://hostel-livid.vercel.app/",
         image: "/hostel-x.jpeg",
-        imageAlt: "Hostel-X screenshot",
-        description: "Hostel-X is a platform that helps students find a hostel in their college.",
+        imageAlt: "Hostel screenshot",
+        description: "Hostel is a platform that helps students find a hostel in their college.",
         technologies: ["React", "Next.js", "Tailwind CSS", "Supabase"]
     },
     {
@@ -20,7 +20,7 @@ export const projects = [
         liveLink: "https://v3.rajavenkatesh.me/",
         image: "/Portfolio.jpeg",
         imageAlt: "Portfolio screenshot",
-        description: "This is my personal portfolio website built with Next.js",
+        description: "This is my personal portfolio website built with Next.js, tailwind CSS and deployed on Vercel.",
         technologies: ["Next.js", "Tailwind CSS"]
     }
 ];

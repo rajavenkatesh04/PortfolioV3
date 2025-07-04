@@ -5,6 +5,7 @@ import { HiCode, HiLightBulb } from "react-icons/hi";
 import { HiRocketLaunch } from "react-icons/hi2";
 import { FaJava } from "react-icons/fa";
 import { SiNextdotjs, SiJavascript, SiReact, SiPostgresql, SiTailwindcss, SiMongodb  } from "react-icons/si";
+import { HiAcademicCap } from "react-icons/hi";
 
 export default function About() {
     const highlights = [
@@ -33,7 +34,13 @@ export default function About() {
         { icon: <FaJava />, name: "Java" },
         { icon: <SiPostgresql />, name: "PostgreSQL" },
         { icon: <SiMongodb />, name: "MongoDB"}
+    ];
 
+    const coursework = [
+        { name: "Data Structures & Algorithms", emoji: "🧠" },
+        { name: "Operating Systems", emoji: "💻" },
+        { name: "Database Management Systems", emoji: "🗄️" },
+        { name: "DevOps", emoji: "🚀" }
     ];
 
     return (
@@ -98,7 +105,7 @@ export default function About() {
                     <div className="space-y-8">
                         <div className="space-y-6">
                             <h2 className="text-2xl sm:text-3xl font-light text-gray-900 dark:text-white">
-                                Full-Stack Developer & <span className="text-indigo-600 dark:text-lime-400">Future Googler</span>
+                                Full-Stack Developer & <span className="text-indigo-600 dark:text-lime-400">Java Enthusiast</span>
                             </h2>
 
                             <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -111,11 +118,12 @@ export default function About() {
                                 <p>
                                     Currently mastering computer science fundamentals while shipping production applications.
                                     I'm obsessed with writing code that doesn't just work — but works beautifully,
-                                    efficiently, and at scale.
+                                    efficiently, and at scale. (And yes, I do enjoy debugging at 2 AM ☕)
                                 </p>
                                 <p>
-                                    My mission? To join <span className="text-teal-600 dark:text-emerald-400 font-medium">Google, Meta, or Amazon </span>
-                                    and help build the next generation of products that connect and empower billions of users worldwide.
+                                    My mission? To join a world-class tech team where I can contribute to
+                                    <span className="text-teal-600 dark:text-emerald-400 font-medium"> impactful products</span> that
+                                    connect and empower millions of users worldwide.
                                 </p>
                             </div>
                         </div>
@@ -139,7 +147,7 @@ export default function About() {
                 </div>
 
                 {/* Tech Stack */}
-                <div className="text-center">
+                <div className="text-center mb-20">
                     <h3 className="text-xl font-light text-indigo-600 dark:text-lime-400 mb-2">Technical Arsenal</h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-8">Technologies I leverage to build exceptional products</p>
 
@@ -160,8 +168,33 @@ export default function About() {
                     </div>
                 </div>
 
+                {/* Academic Foundation */}
+                <div className="text-center mb-20">
+                    <div className="inline-flex items-center gap-2 mb-4">
+                        <HiAcademicCap className="text-xl text-indigo-600 dark:text-lime-400" />
+                        <h3 className="text-xl font-light text-indigo-600 dark:text-lime-400">Academic Foundation</h3>
+                    </div>
+                    <p className="text-gray-600 dark:text-gray-400 mb-8">Core computer science concepts that power my development</p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+                        {coursework.map((course, index) => (
+                            <div
+                                key={index}
+                                className="group p-6 rounded-lg border border-gray-300 dark:border-gray-800 bg-gray-100 dark:bg-gray-900/30 hover:border-indigo-600/50 dark:hover:border-lime-400/50 hover:bg-indigo-600/5 dark:hover:bg-lime-400/5 transition-all duration-300"
+                            >
+                                <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                                    {course.emoji}
+                                </div>
+                                <h4 className="font-medium text-gray-900 dark:text-white text-sm group-hover:text-indigo-600 dark:group-hover:text-lime-400 transition-colors duration-300">
+                                    {course.name}
+                                </h4>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
                 {/* Call to Action */}
-                <div className="text-center mt-20">
+                <div className="text-center">
                     <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full border-2 border-indigo-600/50 dark:border-lime-400/50 bg-gradient-to-r from-indigo-600/10 to-teal-600/10 dark:from-lime-400/10 dark:to-emerald-400/10 hover:from-indigo-600/20 hover:to-teal-600/20 dark:hover:from-lime-400/20 dark:hover:to-emerald-400/20 transition-all duration-300">
                         <span className="text-indigo-600 dark:text-lime-400 font-medium">Let's build something extraordinary together</span>
                         <div className="w-2 h-2 bg-teal-600 dark:bg-emerald-400 rounded-full animate-bounce"></div>
