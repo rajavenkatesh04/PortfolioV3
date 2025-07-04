@@ -15,7 +15,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const { theme } = useTheme();
-    const logoSrc = theme === "dark" ? "/logo light.png" : "/logo dark.png";
+    const logoSrc = theme === "light" ? "/logo dark.png" : "/logo light.png";
 
     return (
         <nav className="w-full fixed top-0 z-50 bg-white/10 backdrop-blur-xl dark:bg-transparent dark:backdrop-blur-xl text-gray-900 dark:text-white dark:sm:bg-black/10 transition-colors duration-200">
