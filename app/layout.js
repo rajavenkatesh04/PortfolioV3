@@ -3,8 +3,8 @@ import { Josefin_Sans } from 'next/font/google';
 import Providers from "@/app/_components/ThemeProvider";
 import "./globals.css";
 import Navbar from "@/app/_components/ui/Navbar";
-import Navbar2 from "@/app/_components/ui/Navbar2";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 
 const geistSans = Geist({
@@ -31,17 +31,34 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-      <Providers>
-          <div className={`min-h-screen`}>
-              <Navbar/>
-              <main className={``}>{children}</main>
-              <Analytics/>
-          </div>
-      </Providers>
-      </body>
+
+    <head>
+
+        <Script
+            id="microsoft-clarity-analytics"
+            strategy="afterInteractive"
+        >
+            {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "sbdkbzg1q6");
+          `}
+        </Script>
+
+        <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+        <Providers>
+            <div className={`min-h-screen`}>
+                <Navbar/>
+                <main className={``}>{children}</main>
+                <Analytics/>
+            </div>
+        </Providers>
+        </body>
+    </head>
     </html>
   );
 }
